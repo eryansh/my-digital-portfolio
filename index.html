@@ -8,14 +8,6 @@
 </head>
 <body>
 
-    <!-- Interactive Navigation -->
-    <nav id="navbar">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#written-portfolio" class="nav-link">Written</a>
-        <a href="#visual-portfolio" class="nav-link">Visual</a>
-        <a href="#data-portfolio" class="nav-link">Data</a>
-    </nav>
-
     <header id="about">
         <h1 class="uppercase-title">About Me</h1>
         <p>Hi, I'm Ryan. I am a Computer Science student specializing in Data Science at Universiti Malaysia Sabah.</p>
@@ -24,7 +16,7 @@
     <section id="written-portfolio">
         <h1 class="uppercase-title">Written Portfolio</h1>
         <div id="written-grid" class="card-grid">
-            <!-- JavaScript will populate interactive cards here -->
+            <!-- JavaScript (cards.js) will populate interactive cards here -->
         </div> 
     </section>
 
@@ -47,7 +39,7 @@
             <!-- Interactive Toggle Button -->
             <button id="toggle-tech-btn" class="btn">View Technical Details</button>
             
-            <!-- Hidden details that JS will reveal -->
+            <!-- Hidden details that JS (interactions.js) will reveal -->
             <div id="tech-details" class="hidden-content">
                 <p><strong>Technical Note:</strong> Data splitting is handled strictly before applying SMOTE to prevent data leakage. Feature selection counts and hyperparameter search iterations were highly optimized to ensure smooth computational performance.</p>
             </div>
@@ -59,6 +51,7 @@
         </div>
     </section>
 
-    <script src="app.js"></script>
+    <!-- The 'type="module"' attribute is required to use import/export -->
+    <script type="module" src="app.js"></script>
 </body>
 </html>
