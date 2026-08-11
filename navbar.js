@@ -1,18 +1,17 @@
 // navbar.js
 export function createNavbar() {
-    // 1. Create the <nav> element
     const nav = document.createElement('nav');
     nav.id = 'navbar';
 
-    // 2. Define your navigation links
+    // Menu navigasi yang baru berdasarkan struktur profesional
     const navLinks = [
-        { id: 'about', text: 'About' },
-        { id: 'written-portfolio', text: 'Written' },
-        { id: 'visual-portfolio', text: 'Visual' },
-        { id: 'data-portfolio', text: 'Data' }
+        { id: 'about', text: 'About Me' },
+        { id: 'tech-stack', text: 'Tech Stack' },
+        { id: 'projects', text: 'Projects' },
+        { id: 'leadership', text: 'Leadership' },
+        { id: 'contact', text: 'Contact' }
     ];
 
-    // 3. Loop through the data and create the <a> tags
     navLinks.forEach(linkData => {
         const anchor = document.createElement('a');
         anchor.href = `#${linkData.id}`;
@@ -21,6 +20,5 @@ export function createNavbar() {
         nav.appendChild(anchor);
     });
 
-    // 4. Inject the navbar at the very top of the <body>
     document.body.insertAdjacentElement('afterbegin', nav);
 }

@@ -1,53 +1,88 @@
 // cards.js
 
-// 1. Structure the data including real hyperlinks for your works
-const writtenPortfolioData = [
-    { text: "Academic Thesis Executive Summary", url: "https://your-domain.com/thesis_summary.pdf" },
-    { text: "Huawei ICT Competition Retrospective", url: "https://github.com/eryansh/huawei-retrospective" },
-    { text: "Learnings from PeopleCert Data Science & ITIL", url: "https://www.linkedin.com/in/eryansh/" }
+// Data Projek Akademik
+const academicProjects = [
+    {
+        title: "Degree Research Project",
+        desc: "Advanced research in Data Science focusing on analytical methodologies and machine learning models.",
+        tags: ["Data Science", "Research", "Analytics"]
+    },
+    {
+        title: "Diploma IoT Development",
+        desc: "End-to-end hardware and software integration project utilizing IoT technologies.",
+        tags: ["IoT", "Hardware", "Integration"]
+    },
+    {
+        title: "Distributed Functional App",
+        desc: "Designed and tested a three-node Manager-Worker simulation utilizing a Linux VM and socket-based message passing.",
+        tags: ["Linux VM", "Sockets", "Distributed Systems"]
+    }
 ];
 
-export function loadWrittenCards() {
-    const writtenGrid = document.getElementById('written-grid');
-    if (!writtenGrid) return; 
+// Data Kepimpinan & Penglibatan
+const leadershipActivities = [
+    {
+        title: "Borneo Hackathon 2024",
+        desc: "Managed participant registrations and designed the official event booklets for the tech event.",
+        tags: ["Event Management", "Graphic Design"]
+    },
+    {
+        title: "STEM Education & UMS Facilitator",
+        desc: "Active committee member, speaker, and facilitator driving STEM teaching initiatives and workshops.",
+        tags: ["Leadership", "Public Speaking", "Community"]
+    },
+    {
+        title: "Huawei ICT Competition",
+        desc: "Engaged in the National and Practice rounds, demonstrating proficiency in IT infrastructure.",
+        tags: ["Competition", "Networking"]
+    },
+    {
+        title: "Professional Certifications",
+        desc: "Earned industry-recognized credentials including the PeopleCert Data Science Foundation and ITIL certifications.",
+        tags: ["Data Science Foundation", "ITIL"]
+    }
+];
 
-    writtenPortfolioData.forEach(item => {
-        // Build an actually clickable anchor element (<a>)
-        const cardLink = document.createElement('a');
-        cardLink.href = item.url;
-        cardLink.target = "_blank"; // Open in new tab
-        cardLink.rel = "noopener noreferrer"; // Security best practice
-        cardLink.className = 'interactive-card link-card'; // Added special class
-        cardLink.textContent = item.text;
-        
-        writtenGrid.appendChild(cardLink);
-    });
+export function loadDynamicCards() {
+    const academicGrid = document.getElementById('academic-projects-grid');
+    const leadershipGrid = document.getElementById('leadership-grid');
 
-    // We must call the setup function *after* cards are on the DOM
-    setupLinkCardCursorInteraction();
-}
+    // Fungsi untuk membina kad HTML
+    function buildCard(data, container) {
+        if (!container) return;
 
-/**
- * Attaches specific hover logic for actual hyperlinks (like written items).
- * When hovering these, the cursor transforms into a distinct 'Link' shape (square).
- */
-function setupLinkCardCursorInteraction() {
-    const outline = document.getElementById('cursor-outline');
-    if (!outline) return;
+        const card = document.createElement('div');
+        card.className = 'interactive-card';
 
-    // Select specifically actual hyperlinks or elements that act like them
-    const linkCards = document.querySelectorAll('.link-card');
-    
-    linkCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            // Transform outer ring to a 'square/link' shape
-            outline.classList.add('cursor-hover', 'cursor-clickable');
+        const title = document.createElement('h3');
+        title.textContent = data.title;
+        title.style.color = "var(--text-light)";
+
+        const desc = document.createElement('p');
+        desc.textContent = data.desc;
+        desc.style.marginBottom = "15px";
+
+        const tagsContainer = document.createElement('div');
+        tagsContainer.style.display = "flex";
+        tagsContainer.style.gap = "10px";
+        tagsContainer.style.flexWrap = "wrap";
+
+        data.tags.forEach(tagText => {
+            const tag = document.createElement('span');
+            tag.className = 'badge';
+            tag.style.fontSize = "0.7rem";
+            tag.style.border = "1px solid rgba(0, 229, 255, 0.3)";
+            tag.textContent = tagText;
+            tagsContainer.appendChild(tag);
         });
-        
-        card.addEventListener('mouseleave', () => {
-            // Remove 'link' shape back to normal expanded circle
-            outline.classList.remove('cursor-clickable');
-            // 'cursor-hover' might remain if the cursor module still tracks standard hover
-        });
-    });
+
+        card.appendChild(title);
+        card.appendChild(desc);
+        card.appendChild(tagsContainer);
+        container.appendChild(card);
+    }
+
+    // Suntik data ke dalam DOM
+    academicProjects.forEach(item => buildCard(item, academicGrid));
+    leadershipActivities.forEach(item => buildCard(item, leadershipGrid));
 }

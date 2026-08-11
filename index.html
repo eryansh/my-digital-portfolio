@@ -12,51 +12,96 @@
 </head>
 <body>
     
+    <!-- Background Neural Network Particles -->
+    <canvas id="particle-canvas"></canvas>
+    
     <!-- Custom Cursor Elements -->
     <div id="cursor-dot"></div>
     <div id="cursor-outline"></div>
 
-    <header id="about">
-        <h1 class="uppercase-title">About Me</h1>
-        <p>Hi, I'm Ryan. I am a Computer Science student specializing in Data Science at Universiti Malaysia Sabah.</p>
+    <!-- 1. Hero Section -->
+    <header id="about" class="reveal">
+        <h1 class="uppercase-title">Data Science Student & Tech Developer</h1>
+        <!-- Typewriter text configuration -->
+        <p id="typewriter-text" data-text="Hi, I'm Ryan. I am a Computer Science student specializing in Data Science at Universiti Malaysia Sabah (UMS). I build smart solutions blending machine learning, IoT, and full-stack development."></p>
     </header>
 
-    <section id="written-portfolio">
-        <h1 class="uppercase-title">Written Portfolio</h1>
-        <div id="written-grid" class="card-grid">
-            <!-- JavaScript (cards.js) will populate interactive cards here -->
-        </div> 
-    </section>
-
-    <section id="visual-portfolio">
-        <h1 class="uppercase-title">Visual Portfolio</h1>
+    <!-- 2. Tech Stack Section -->
+    <section id="tech-stack" class="reveal">
+        <h1 class="uppercase-title">Tech Arsenal</h1>
         <div class="card-grid">
-            <div class="interactive-card">Borneo Hackathon 2024 Booklet Designs</div>
-            <div class="interactive-card">AI-Generated Cinematic Videos</div>
-            <div class="interactive-card">Mechatronics Projects (mBot2 & Arduino Uno)</div>
+            <div class="interactive-card">
+                <h3>Data & AI</h3>
+                <p>Machine Learning, Deep Learning, Power BI, Streamlit, Pandas</p>
+            </div>
+            <div class="interactive-card">
+                <h3>Development</h3>
+                <p>JavaScript, Web Applications, HTML/CSS, IoT Integration</p>
+            </div>
+            <div class="interactive-card">
+                <h3>Hardware & Tools</h3>
+                <p>Computer Repair, Arduino, mBot2, Excel</p>
+            </div>
         </div>
     </section>
 
-    <section id="data-portfolio">
-        <h1 class="uppercase-title">Data Portfolio</h1>
+    <!-- 3. Projects Section -->
+    <section id="projects" class="reveal">
+        <h1 class="uppercase-title">Core Projects</h1>
         
+        <!-- Live Project -->
+        <div class="project-card">
+            <h2>U-Science Web Application</h2>
+            <p><span class="badge positive neon-pulse">LIVE PROJECT</span></p>
+            <p>A fully functional web application developed and deployed for real-world usage.</p>
+        </div>
+
+        <!-- Academic Projects -->
+        <div id="academic-projects-grid" class="card-grid">
+            <!-- JavaScript (cards.js) will populate FYP projects here -->
+        </div>
+
+        <!-- Data Science Dashboard -->
         <div class="project-card" id="sentiment-analysis">
-            <h2 class="uppercase-title">Sentiment Analysis Dashboard</h2>
+            <h2 class="uppercase-title">SENTIMENT ANALYSIS DASHBOARD</h2>
             <p>A machine learning web app classifying product reviews using Naive Bayes, Random Forest, and XGBoost.</p>
             
             <button id="toggle-tech-btn" class="btn glitch-on-hover">View Technical Details</button>
             
             <div id="tech-details" class="hidden-content">
-                <p><strong>Technical Note:</strong> Data splitting is handled strictly before applying SMOTE to prevent data leakage. Feature selection counts and hyperparameter search iterations were highly optimized to ensure smooth computational performance.</p>
+                <p><strong>Technical Note:</strong> To prevent data leakage, the machine learning workflow was specifically designed so that data splitting occurs strictly before applying class imbalance handling techniques like SMOTE. Additionally, model parameters and feature selection counts were carefully adjusted to optimize computational performance and prevent system freezes during training.</p>
             </div>
             
-            <!-- CHANGED: Placeholder where JS will build the interactive chart -->
+            <!-- Sentiment and Emotion combined into a single row -->
+            <div class="analysis-results-row">
+                <span class="badge positive">SENTIMENT: Positive</span>
+                <span class="badge emotion">EMOTION: Joy</span>
+            </div>
+
+            <!-- Dynamic Chart Container -->
             <div class="chart-section">
                 <h3 class="chart-title">CLASSIFICATION VISUALIZATION: NAIVE BAYES</h3>
                 <div id="sentiment-chart-container" class="chart-container">
-                    <!-- JS populate here -->
+                    <!-- JS (app.js) will populate the cyber chart here -->
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- 4. Leadership & Involvement Section -->
+    <section id="leadership" class="reveal">
+        <h1 class="uppercase-title">Leadership & Community</h1>
+        <div id="leadership-grid" class="card-grid">
+            <!-- JavaScript (cards.js) will populate UMS/STEM activities here -->
+        </div>
+    </section>
+
+    <!-- 5. Contact Section -->
+    <section id="contact" class="reveal">
+        <h1 class="uppercase-title">Let's Connect</h1>
+        <div class="project-card">
+            <p>Interested in collaborating or discussing data science and tech?</p>
+            <a href="mailto:your-email@example.com" class="btn glitch-on-hover">Send an Email</a>
         </div>
     </section>
 
