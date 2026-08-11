@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ryan's Digital Portfolio</title>
+    
+    <!-- Tech Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    <!-- Custom Cursor Elements -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
 
     <header id="about">
         <h1 class="uppercase-title">About Me</h1>
@@ -36,22 +44,19 @@
             <h2 class="uppercase-title">Sentiment Analysis Dashboard</h2>
             <p>A machine learning web app classifying product reviews using Naive Bayes, Random Forest, and XGBoost.</p>
             
-            <!-- Interactive Toggle Button -->
             <button id="toggle-tech-btn" class="btn">View Technical Details</button>
             
-            <!-- Hidden details that JS (interactions.js) will reveal -->
             <div id="tech-details" class="hidden-content">
                 <p><strong>Technical Note:</strong> Data splitting is handled strictly before applying SMOTE to prevent data leakage. Feature selection counts and hyperparameter search iterations were highly optimized to ensure smooth computational performance.</p>
             </div>
             
             <div class="analysis-results-row">
-                <span>SENTIMENT: Positive</span>
-                <span>EMOTION: Joy</span>
+                <span class="badge positive">SENTIMENT: Positive</span>
+                <span class="badge emotion">EMOTION: Joy</span>
             </div>
         </div>
     </section>
 
-    <!-- The 'type="module"' attribute is required to use import/export -->
     <script type="module" src="app.js"></script>
 </body>
 </html>
