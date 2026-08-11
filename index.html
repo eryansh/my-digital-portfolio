@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan's Digital Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1 class="uppercase-title">About Me</h1>
+        <p>Hi, I'm Ryan. I am a Computer Science student specializing in Data Science at Universiti Malaysia Sabah.</p>
+    </header>
+
+    <hr>
+
+    <section id="written-portfolio">
+        <h1 class="uppercase-title">Written Portfolio</h1>
+        <!-- JavaScript will populate this list -->
+        <ul id="written-list"></ul> 
+    </section>
+
+    <hr>
+
+    <section id="visual-portfolio">
+        <h1 class="uppercase-title">Visual Portfolio</h1>
+        <ul>
+            <li>Borneo Hackathon 2024 Booklet Designs</li>
+            <li>AI-Generated Cinematic Videos</li>
+            <li>Mechatronics Projects (mBot2 & Arduino Uno)</li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <section id="data-portfolio">
+        <h1 class="uppercase-title">Data Portfolio</h1>
+        
+        <div class="project-card" id="sentiment-analysis">
+            <h2 class="uppercase-title">Sentiment Analysis Dashboard</h2>
+            <p>A machine learning web app classifying product reviews using Naive Bayes, Random Forest, and XGBoost.</p>
+            <p><strong>Technical Note:</strong> Data splitting is rigorously strictly before applying SMOTE to prevent data leakage. Feature selection counts and hyperparameter search iterations were heavily optimized to ensure smooth computational performance and prevent system freezing during training.</p>
+            
+            <!-- Sentiment and Emotion combined into a single row -->
+            <div class="analysis-results-row">
+                <span>SENTIMENT: Positive</span>
+                <span>EMOTION: Joy</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
