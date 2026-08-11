@@ -38,7 +38,7 @@ body {
 }
 
 /* =========================================
-   2. Custom Cursor Styling & Link State
+   2. Custom Cursor Styling & Link State (PINK UPDATE)
    ========================================= */
 #cursor-dot {
     position: fixed;
@@ -46,12 +46,12 @@ body {
     left: 0;
     width: 6px;
     height: 6px;
-    background-color: var(--accent-blue);
+    background-color: #ff007f; /* Cyber Pink */
     border-radius: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 10000;
-    box-shadow: 0 0 10px var(--accent-blue);
+    box-shadow: 0 0 10px #ff007f;
 }
 
 #cursor-outline {
@@ -60,7 +60,7 @@ body {
     left: 0;
     width: 30px;
     height: 30px;
-    border: 1px solid var(--accent-blue);
+    border: 1px solid #ff007f; /* Cyber Pink */
     border-radius: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
@@ -72,8 +72,8 @@ body {
 .cursor-hover {
     width: 50px !important;
     height: 50px !important;
-    background-color: rgba(0, 229, 255, 0.1);
-    border-color: rgba(0, 229, 255, 0.5) !important;
+    background-color: rgba(255, 0, 127, 0.1); /* Transparent Pink */
+    border-color: rgba(255, 0, 127, 0.5) !important;
 }
 
 /* Clickable state (square instead of circle) */
@@ -81,14 +81,15 @@ body {
     width: 35px !important;
     height: 35px !important;
     border-radius: 2px; /* Square */
-    border: 2px solid var(--accent-blue) !important;
-    transform: translate(-50%, -50%) rotate(45deg); /* Optional: tilt it */
+    border: 2px solid #ff007f !important;
+    transform: translate(-50%, -50%) rotate(45deg); 
 }
 
 @media (pointer: coarse) {
     * { cursor: auto !important; }
     #cursor-dot, #cursor-outline { display: none; }
 }
+
 
 /* =========================================
    3. Typography & Key Headings
