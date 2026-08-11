@@ -44,15 +44,18 @@
             <h2 class="uppercase-title">Sentiment Analysis Dashboard</h2>
             <p>A machine learning web app classifying product reviews using Naive Bayes, Random Forest, and XGBoost.</p>
             
-            <button id="toggle-tech-btn" class="btn">View Technical Details</button>
+            <button id="toggle-tech-btn" class="btn glitch-on-hover">View Technical Details</button>
             
             <div id="tech-details" class="hidden-content">
                 <p><strong>Technical Note:</strong> Data splitting is handled strictly before applying SMOTE to prevent data leakage. Feature selection counts and hyperparameter search iterations were highly optimized to ensure smooth computational performance.</p>
             </div>
             
-            <div class="analysis-results-row">
-                <span class="badge positive">SENTIMENT: Positive</span>
-                <span class="badge emotion">EMOTION: Joy</span>
+            <!-- CHANGED: Placeholder where JS will build the interactive chart -->
+            <div class="chart-section">
+                <h3 class="chart-title">CLASSIFICATION VISUALIZATION: NAIVE BAYES</h3>
+                <div id="sentiment-chart-container" class="chart-container">
+                    <!-- JS populate here -->
+                </div>
             </div>
         </div>
     </section>
