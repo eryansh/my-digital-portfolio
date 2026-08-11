@@ -8,31 +8,34 @@
 </head>
 <body>
 
-    <header>
+    <!-- Interactive Navigation -->
+    <nav id="navbar">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#written-portfolio" class="nav-link">Written</a>
+        <a href="#visual-portfolio" class="nav-link">Visual</a>
+        <a href="#data-portfolio" class="nav-link">Data</a>
+    </nav>
+
+    <header id="about">
         <h1 class="uppercase-title">About Me</h1>
         <p>Hi, I'm Ryan. I am a Computer Science student specializing in Data Science at Universiti Malaysia Sabah.</p>
     </header>
 
-    <hr>
-
     <section id="written-portfolio">
         <h1 class="uppercase-title">Written Portfolio</h1>
-        <!-- JavaScript will populate this list -->
-        <ul id="written-list"></ul> 
+        <div id="written-grid" class="card-grid">
+            <!-- JavaScript will populate interactive cards here -->
+        </div> 
     </section>
-
-    <hr>
 
     <section id="visual-portfolio">
         <h1 class="uppercase-title">Visual Portfolio</h1>
-        <ul>
-            <li>Borneo Hackathon 2024 Booklet Designs</li>
-            <li>AI-Generated Cinematic Videos</li>
-            <li>Mechatronics Projects (mBot2 & Arduino Uno)</li>
-        </ul>
+        <div class="card-grid">
+            <div class="interactive-card">Borneo Hackathon 2024 Booklet Designs</div>
+            <div class="interactive-card">AI-Generated Cinematic Videos</div>
+            <div class="interactive-card">Mechatronics Projects (mBot2 & Arduino Uno)</div>
+        </div>
     </section>
-
-    <hr>
 
     <section id="data-portfolio">
         <h1 class="uppercase-title">Data Portfolio</h1>
@@ -40,9 +43,15 @@
         <div class="project-card" id="sentiment-analysis">
             <h2 class="uppercase-title">Sentiment Analysis Dashboard</h2>
             <p>A machine learning web app classifying product reviews using Naive Bayes, Random Forest, and XGBoost.</p>
-            <p><strong>Technical Note:</strong> Data splitting is rigorously strictly before applying SMOTE to prevent data leakage. Feature selection counts and hyperparameter search iterations were heavily optimized to ensure smooth computational performance and prevent system freezing during training.</p>
             
-            <!-- Sentiment and Emotion combined into a single row -->
+            <!-- Interactive Toggle Button -->
+            <button id="toggle-tech-btn" class="btn">View Technical Details</button>
+            
+            <!-- Hidden details that JS will reveal -->
+            <div id="tech-details" class="hidden-content">
+                <p><strong>Technical Note:</strong> Data splitting is handled strictly before applying SMOTE to prevent data leakage. Feature selection counts and hyperparameter search iterations were highly optimized to ensure smooth computational performance.</p>
+            </div>
+            
             <div class="analysis-results-row">
                 <span>SENTIMENT: Positive</span>
                 <span>EMOTION: Joy</span>
