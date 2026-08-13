@@ -27,7 +27,6 @@ const FeaturedLiveApps = () => {
       <div style={styles.gridContainer}>
         {liveApps.map((app) => (
           <div key={app.id} style={styles.appCard}>
-            {/* Bahagian Header Kad (Status Bar) */}
             <div style={styles.cardHeader}>
               <div style={styles.statusIndicator}>
                 <span style={styles.statusDot}></span>
@@ -36,12 +35,10 @@ const FeaturedLiveApps = () => {
               <span style={styles.pingText}>Ping: {app.ping}</span>
             </div>
 
-            {/* Bahagian Info Utama */}
             <div style={styles.cardBody}>
               <h3 style={styles.appTitle}>{app.title}</h3>
               <p style={styles.appDesc}>{app.description}</p>
               
-              {/* Tag Teknologi */}
               <div style={styles.techContainer}>
                 {app.techStack.map((tech, index) => (
                   <span key={index} style={styles.techTag}>
@@ -51,7 +48,6 @@ const FeaturedLiveApps = () => {
               </div>
             </div>
 
-            {/* Butang Tindakan */}
             <div style={styles.cardFooter}>
               <a href={app.link} target="_blank" rel="noopener noreferrer" style={styles.launchBtn}>
                 [ LAUNCH_APP ]
