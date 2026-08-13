@@ -1,5 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
+// ==========================================
+// KITA PINDAHKAN SENARAI INI KE LUAR KOMPONEN
+// Supaya ia tidak dibina semula setiap kali render
+// ==========================================
+const phrases = [
+  "Data Scientist.", 
+  "Full-Stack Developer.", 
+  "Machine Learning Enthusiast.",
+  "Internet of Things (IoT).",
+  "Electronics."
+];
+
 const Hero = () => {
   // ==========================================
   // LOGIK ENJIN TYPEWRITER (KESAN TAIPAN)
@@ -8,15 +20,6 @@ const Hero = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
-
-  // SENARAI FRASA TELAH DIKEMASKINI 
-  const phrases = [
-    "Data Scientist.", 
-    "Full-Stack Developer.", 
-    "Machine Learning Enthusiast.",
-    "Internet of Things (IoT).",
-    "Electronics."
-  ];
 
   useEffect(() => {
     let timer;
@@ -46,7 +49,9 @@ const Hero = () => {
 
     timer = setTimeout(handleType, typingSpeed);
     return () => clearTimeout(timer);
-  }, [text, isDeleting, loopNum, typingSpeed, phrases]);
+    
+    // NOTA: 'phrases' telah dibuang dari array di bawah
+  }, [text, isDeleting, loopNum, typingSpeed]); 
 
   // ==========================================
   // FUNGSI NAVIGASI BUTANG
@@ -71,7 +76,7 @@ const Hero = () => {
 
         {/* Tajuk Utama (Nama) */}
         <h1 style={styles.mainTitle}>
-          HERYANSHAH <span style={{ color: 'var(--accent-cyan)' }}>SUHAIMI</span>
+          RYAN <span style={{ color: 'var(--accent-cyan)' }}>SUHAIMI</span>
         </h1>
 
         {/* Efek Typewriter */}
@@ -136,7 +141,7 @@ const styles = {
     marginBottom: '10px',
   },
   mainTitle: {
-    fontSize: 'clamp(3rem, 8vw, 5.5rem)', // Responsif automatik ikut skrin
+    fontSize: 'clamp(3rem, 8vw, 5.5rem)', 
     fontWeight: '900',
     margin: '0',
     lineHeight: '1.1',
@@ -209,7 +214,6 @@ const styles = {
   }
 };
 
-// Tambah animasi kursor berkedip ke dalam tag style dokumen
 const styleSheet = document.createElement("style");
 styleSheet.type = "text/css";
 styleSheet.innerText = `
