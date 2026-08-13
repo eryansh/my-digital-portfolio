@@ -2,14 +2,9 @@ import React from 'react';
 import Cursor from './components/Cursor';
 import Navbar from './components/Navbar';
 import Chatbot from './components/Chatbot';
+import Hero from './components/Hero';
 
-// Placeholder komponen yang akan kita isi satu-persatu selepas ini
-const Hero = () => (
-  <section id="about" style={styles.placeholderSection}>
-    <h1 style={{ color: 'var(--accent-cyan)' }}>[ ABOUT / HERO_SECTION ]</h1>
-    <p>Hi, I am Heryanshah Suhaimi (Ryan). Data Scientist & Full-Stack Developer.</p>
-  </section>
-);
+
 
 const FeaturedLiveApps = () => (
   <section id="featured" style={styles.placeholderSection}>
