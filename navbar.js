@@ -17,7 +17,15 @@ export function createNavbar() {
     navLeft.appendChild(logo);
 
     // ==========================================
-    // 2. BAHAGIAN KANAN (Pautan & Butang Tema)
+    // 2. BUTANG HAMBURGER (Khas Untuk Mobile)
+    // ==========================================
+    const menuToggle = document.createElement('div');
+    menuToggle.className = 'menu-toggle';
+    // Menjana 3 garisan untuk ikon hamburger
+    menuToggle.innerHTML = '<span></span><span></span><span></span>';
+
+    // ==========================================
+    // 3. BAHAGIAN KANAN (Pautan & Butang Tema)
     // ==========================================
     const navRight = document.createElement('div');
     navRight.className = 'nav-right';
@@ -38,6 +46,13 @@ export function createNavbar() {
         anchor.href = `#${linkData.id}`;
         anchor.className = 'nav-link';
         anchor.textContent = linkData.text;
+        
+        // Tutup menu mobile secara automatik apabila pautan diklik
+        anchor.addEventListener('click', () => {
+            navRight.classList.remove('active');
+            menuToggle.classList.remove('active');
+        });
+        
         navRight.appendChild(anchor);
     });
 
@@ -46,16 +61,22 @@ export function createNavbar() {
     themeBtn.id = 'theme-randomizer';
     themeBtn.className = 'theme-btn'; 
     themeBtn.textContent = 'Random Theme';
-    
-    // Panggil fungsi tukar tema bila diklik
     themeBtn.addEventListener('click', randomizeTheme);
-
     navRight.appendChild(themeBtn);
 
     // ==========================================
-    // 3. GABUNGKAN KE DALAM NAVBAR
+    // 4. INTERAKSI MENU MOBILE
+    // ==========================================
+    menuToggle.addEventListener('click', () => {
+        navRight.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
+
+    // ==========================================
+    // 5. GABUNGKAN KE DALAM NAVBAR
     // ==========================================
     nav.appendChild(navLeft);
+    nav.appendChild(menuToggle); // Masukkan butang hamburger
     nav.appendChild(navRight);
 
     document.body.insertAdjacentElement('afterbegin', nav);
@@ -65,14 +86,12 @@ export function createNavbar() {
 // FUNGSI PENGGODAM TEMA (Theme Randomizer)
 // ==========================================
 function randomizeTheme() {
-    // Fungsi kecil untuk menghasilkan kod Hex warna rawak (cth: #ff007f)
     const getRandomColor = () => '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
     
     const root = document.documentElement;
     const newCyan = getRandomColor();
     const newPink = getRandomColor();
     
-    // Gantikan pembolehubah CSS di :root secara dinamik
     root.style.setProperty('--accent-cyan', newCyan);
     root.style.setProperty('--accent-pink', newPink);
     root.style.setProperty('--glitch-cyan', newCyan);
