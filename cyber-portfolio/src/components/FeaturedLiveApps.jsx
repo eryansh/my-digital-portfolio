@@ -1,13 +1,12 @@
 import React from 'react';
 
 const FeaturedLiveApps = () => {
-  // Senarai aplikasi 'Live' kau (Kini hanya 1 aplikasi utama)
   const liveApps = [
     {
       id: 1,
-      title: "UMS U-Science Platform", // Boleh tukar nama rasmi kalau nak
-      description: "Interactive web application deployed for UMS U-Science. Features responsive UI and optimized performance for real-time user engagement.", // Sila tukar ikut deskripsi sebenar projek kau
-      techStack: ["React", "JavaScript", "Vercel"], // Tukar tech stack ikut apa yang kau guna
+      title: "UMS U-Science Platform",
+      description: "Interactive web application deployed for UMS U-Science. Features responsive UI and optimized performance for real-time user engagement.",
+      techStack: ["React", "JavaScript", "Vercel"],
       status: "ONLINE",
       ping: "14ms",
       link: "https://ums-uscience.vercel.app" 
@@ -65,9 +64,6 @@ const FeaturedLiveApps = () => {
   );
 };
 
-// ==========================================
-// REKA BENTUK CYBERPUNK (INLINE CSS)
-// ==========================================
 const styles = {
   section: {
     padding: '60px 0',
@@ -97,7 +93,6 @@ const styles = {
   },
   gridContainer: {
     display: 'grid',
-    // Disebabkan cuma 1 item, ia akan automatik ambil full width (lebar penuh)
     gridTemplateColumns: '1fr', 
     gap: '30px',
   },
@@ -134,7 +129,6 @@ const styles = {
     borderRadius: '50%',
     marginRight: '8px',
     boxShadow: '0 0 8px var(--chart-bar-positive)',
-    animation: 'blink 1.5s infinite alternate', // Tambah animasi kelip sikit biar nampak 'hidup'
   },
   pingText: {
     color: 'var(--text-main)',
@@ -147,7 +141,7 @@ const styles = {
   },
   appTitle: {
     color: 'var(--accent-cyan)',
-    fontSize: '1.6rem', // Besarkan sikit saiz tajuk sebab kad dah lebar
+    fontSize: '1.6rem',
     margin: '0 0 10px 0',
   },
   appDesc: {

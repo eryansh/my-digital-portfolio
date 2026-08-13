@@ -1,7 +1,6 @@
 import React from 'react';
 
 const WorkGrid = () => {
-  // Senarai projek-projek lain (Akademik & Peribadi)
   const projects = [
     {
       id: 1,
@@ -47,17 +46,14 @@ const WorkGrid = () => {
         {projects.map((proj) => (
           <div key={proj.id} style={styles.projectCard}>
             
-            {/* Header Kad */}
             <div style={styles.cardHeader}>
               <span style={styles.categoryBadge}>{proj.category}</span>
             </div>
 
-            {/* Kandungan Utama */}
             <div style={styles.cardBody}>
               <h3 style={styles.projectTitle}>{proj.title}</h3>
               <p style={styles.projectDesc}>{proj.description}</p>
               
-              {/* Tag Teknologi */}
               <div style={styles.techContainer}>
                 {proj.techStack.map((tech, index) => (
                   <span key={index} style={styles.techTag}>
@@ -67,7 +63,6 @@ const WorkGrid = () => {
               </div>
             </div>
 
-            {/* Pautan Bawah */}
             <div style={styles.cardFooter}>
               <a href={proj.github} target="_blank" rel="noopener noreferrer" style={styles.cardLink}>
                 [ GITHUB_REPO ]
@@ -84,9 +79,6 @@ const WorkGrid = () => {
   );
 };
 
-// ==========================================
-// REKA BENTUK CYBERPUNK (INLINE CSS)
-// ==========================================
 const styles = {
   section: {
     padding: '60px 0',
