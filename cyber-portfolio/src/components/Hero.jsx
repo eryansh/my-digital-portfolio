@@ -76,7 +76,7 @@ const Hero = () => {
 
         {/* Tajuk Utama (Nama) */}
         <h1 style={styles.mainTitle}>
-          RYAN <span style={{ color: 'var(--accent-cyan)' }}>SUHAIMI</span>
+          HERYANSHAH <span style={{ color: 'var(--accent-cyan)' }}>SUHAIMI</span>
         </h1>
 
         {/* Efek Typewriter */}
