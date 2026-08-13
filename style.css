@@ -129,12 +129,36 @@ h1, h2, h3 {
     background: rgba(5, 8, 16, 0.85); 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 20px;
+    padding: 20px 40px; /* Lebarkan sedikit padding kiri dan kanan */
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    justify-content: space-between; /* Tolak logo ke kiri, menu ke kanan */
+    align-items: center; /* Pastikan semua sebaris di tengah-tengah */
     z-index: 1000;
     border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+/* Gaya untuk "HERYANSHAH SUHAIMI" */
+.nav-left .nav-logo {
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: 'Fira Code', monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px var(--accent-cyan);
+    transition: text-shadow 0.3s ease;
+}
+
+.nav-left .nav-logo:hover {
+    text-shadow: 0 0 20px var(--accent-pink);
+}
+
+/* Bekas untuk menu dan butang */
+.nav-right {
+    display: flex;
+    gap: 25px;
+    align-items: center;
 }
 
 .nav-link {
@@ -149,6 +173,27 @@ h1, h2, h3 {
 .nav-link:hover {
     color: var(--accent-cyan);
     text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+}
+
+/* Gaya Butang Randomize Theme */
+.theme-btn {
+    background: transparent;
+    border: 1px solid var(--accent-pink);
+    color: var(--accent-pink);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    /* Kita padam pointer tersuai khusus untuk butang supaya boleh klik */
+    cursor: pointer !important; 
+}
+
+.theme-btn:hover {
+    background: var(--accent-pink);
+    color: #ffffff;
+    box-shadow: 0 0 15px var(--accent-pink);
 }
 
 /* =========================================
