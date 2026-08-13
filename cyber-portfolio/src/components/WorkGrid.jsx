@@ -35,7 +35,8 @@ const WorkGrid = () => {
     <section id="work" style={styles.section}>
       <div style={styles.headerContainer}>
         <h2 style={styles.sectionTitle}>
-          <span style={styles.slash}>//</span> WORK_&_PROJECTS
+          {/* This is the line that was fixed */}
+          <span style={styles.slash}>{"//"}</span> WORK_&_PROJECTS
         </h2>
         <p style={styles.sectionDesc}>
           Archive of data science experiments, hardware integrations, and full-stack software builds.

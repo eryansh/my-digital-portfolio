@@ -17,7 +17,8 @@ const FeaturedLiveApps = () => {
     <section id="featured" style={styles.section}>
       <div style={styles.headerContainer}>
         <h2 style={styles.sectionTitle}>
-          <span style={styles.slash}>//</span> FEATURED_LIVE_APP
+          {/* This is the line that was fixed */}
+          <span style={styles.slash}>{"//"}</span> FEATURED_LIVE_APP
         </h2>
         <p style={styles.sectionDesc}>
           Production-ready application currently deployed and active on the mainframe.
