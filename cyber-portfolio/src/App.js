@@ -3,22 +3,10 @@ import Cursor from './components/Cursor';
 import Navbar from './components/Navbar';
 import Chatbot from './components/Chatbot';
 import Hero from './components/Hero';
+import FeaturedLiveApps from './components/FeaturedLiveApps';
+import WorkGrid from './components/WorkGrid';
 
 
-
-const FeaturedLiveApps = () => (
-  <section id="featured" style={styles.placeholderSection}>
-    <h2 style={{ color: 'var(--chart-bar-positive)' }}>[ FEATURED_LIVE_APPLICATIONS ]</h2>
-    <p>Interactive station for fully deployed web apps and production models.</p>
-  </section>
-);
-
-const WorkGrid = () => (
-  <section id="work" style={styles.placeholderSection}>
-    <h2 style={{ color: 'var(--accent-cyan)' }}>[ WORK_&_PROJECTS_GRID ]</h2>
-    <p>3D Tilt Project Cards and technical repositories will be deployed here.</p>
-  </section>
-);
 
 const Journey = () => (
   <section id="journey" style={styles.placeholderSection}>

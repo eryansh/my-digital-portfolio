@@ -3,13 +3,6 @@ import React, { useState } from 'react';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Fungsi penukar tema rawak
-  const changeTheme = () => {
-    const colors = ['#00e5ff', '#ff007f', '#bfff00', '#ffaa00', '#9d00ff'];
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    document.documentElement.style.setProperty('--accent-cyan', randomColor);
-  };
-
   // Fungsi untuk skrol lancar dan tutup menu mobile
   const handleLinkClick = (e, targetId) => {
     e.preventDefault(); // Menghalang lompatan mengejut default HTML
@@ -45,16 +38,8 @@ const Navbar = () => {
         <li><a href="#cv" className="nav-link" onClick={(e) => handleLinkClick(e, 'cv')}>CV</a></li>
       </ul>
 
-      {/* Bekas untuk butang tema dan butang hamburger */}
+      {/* Bekas untuk butang hamburger */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '15px', zIndex: 100001 }}>
-        <button 
-          onClick={changeTheme} 
-          className="theme-btn btn" 
-          style={styles.themeBtn}
-          title="Random Theme"
-        >
-          🎲
-        </button>
 
         {/* Butang Hamburger */}
         <div 
@@ -99,14 +84,6 @@ const styles = {
     gap: '20px',
     margin: 0,
     padding: 0,
-  },
-  themeBtn: {
-    padding: '6px 12px', 
-    margin: '0', 
-    background: 'rgba(0, 229, 255, 0.05)',
-    border: '1px solid rgba(0, 229, 255, 0.3)',
-    borderRadius: '4px',
-    cursor: 'pointer'
   },
   hamburger: {
     cursor: 'pointer'
