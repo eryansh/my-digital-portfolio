@@ -9,10 +9,13 @@ const Hero = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
+  // SENARAI FRASA TELAH DIKEMASKINI 
   const phrases = [
     "Data Scientist.", 
     "Full-Stack Developer.", 
-    "Machine Learning Enthusiast."
+    "Machine Learning Enthusiast.",
+    "Internet of Things (IoT).",
+    "Electronics."
   ];
 
   useEffect(() => {
@@ -68,7 +71,7 @@ const Hero = () => {
 
         {/* Tajuk Utama (Nama) */}
         <h1 style={styles.mainTitle}>
-          RYAN <span style={{ color: 'var(--accent-cyan)' }}>SUHAIMI</span>
+          HERYANSHAH <span style={{ color: 'var(--accent-cyan)' }}>SUHAIMI</span>
         </h1>
 
         {/* Efek Typewriter */}

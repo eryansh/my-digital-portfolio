@@ -1,16 +1,16 @@
 // cards.js
 
-// Data Projek Akademik
+// Data Projek Akademik (Dikemas kini dengan butiran teknikal yang lebih padu)
 const academicProjects = [
     {
-        title: "Degree Research Project",
-        desc: "Advanced research in Data Science focusing on analytical methodologies and machine learning models.",
-        tags: ["Data Science", "Research", "Analytics"]
+        title: "ML Sentiment Analysis Dashboard",
+        desc: "Developed a predictive classification dashboard using Python, scikit-learn, and Streamlit. Engineered models including Naive Bayes and XGBoost, with strict data-splitting protocols prior to handling class imbalances.",
+        tags: ["Machine Learning", "Streamlit", "Python"]
     },
     {
-        title: "Diploma IoT Development",
-        desc: "End-to-end hardware and software integration project utilizing IoT technologies.",
-        tags: ["IoT", "Hardware", "Integration"]
+        title: "Educational Robotics & Mechatronics",
+        desc: "Executed hardware-software integration projects utilizing Arduino Uno and mBot2 educational kits for technical developments at Pusat Fasiliti U-Science.",
+        tags: ["Arduino", "Hardware Integration", "Robotics"]
     },
     {
         title: "Distributed Functional App",
@@ -19,7 +19,7 @@ const academicProjects = [
     }
 ];
 
-// Data Kepimpinan & Penglibatan
+// Data Kepimpinan & Penglibatan (Kekal mantap)
 const leadershipActivities = [
     {
         title: "Borneo Hackathon 2024",

@@ -1,38 +1,48 @@
-// cursor.js
-export function initCursor() {
-    const dot = document.getElementById('cursor-dot');
-    const outline = document.getElementById('cursor-outline');
+import React, { useEffect, useRef } from 'react';
 
-    // Only apply custom cursor on non-touch devices
-    if (window.matchMedia("(pointer: fine)").matches) {
-        
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
+const Cursor = () => {
+  const dotRef = useRef(null);
+  const outlineRef = useRef(null);
 
-            // Move the dot instantly
-            dot.style.left = `${posX}px`;
-            dot.style.top = `${posY}px`;
+  useEffect(() => {
+    const moveCursor = (e) => {
+      const { clientX, clientY } = e;
+      if (dotRef.current && outlineRef.current) {
+        dotRef.current.style.transform = `translate(calc(${clientX}px - 50%), calc(${clientY}px - 50%))`;
+        outlineRef.current.style.transform = `translate(calc(${clientX}px - 50%), calc(${clientY}px - 50%))`;
+      }
+    };
 
-            // Add a slight delay to the outline for a fluid "trailing" effect
-            setTimeout(() => {
-                outline.style.left = `${posX}px`;
-                outline.style.top = `${posY}px`;
-            }, 80);
-        });
+    const handleMouseOver = (e) => {
+      // Ditambah sokongan input dan butang chatbot supaya kursor tak hilang
+      if (e.target.closest('a, button, input, textarea, .nav-brand, .theme-btn')) {
+        if (outlineRef.current) outlineRef.current.classList.add('cursor-hover');
+      }
+    };
 
-        // Add hover effects to links, buttons, and interactive cards
-        const addHoverEffect = () => {
-            const interactiveElements = document.querySelectorAll('a, button, .interactive-card, .project-card');
-            interactiveElements.forEach(el => {
-                el.addEventListener('mouseenter', () => outline.classList.add('cursor-hover'));
-                el.addEventListener('mouseleave', () => outline.classList.remove('cursor-hover'));
-            });
-        };
+    const handleMouseOut = (e) => {
+      if (e.target.closest('a, button, input, textarea, .nav-brand, .theme-btn')) {
+        if (outlineRef.current) outlineRef.current.classList.remove('cursor-hover');
+      }
+    };
 
-        // Run initially, and set up a mutation observer in case elements are added dynamically
-        addHoverEffect();
-        const observer = new MutationObserver(addHoverEffect);
-        observer.observe(document.body, { childList: true, subtree: true });
-    }
-}
+    window.addEventListener('mousemove', moveCursor);
+    document.addEventListener('mouseover', handleMouseOver);
+    document.addEventListener('mouseout', handleMouseOut);
+
+    return () => {
+      window.removeEventListener('mousemove', moveCursor);
+      document.removeEventListener('mouseover', handleMouseOver);
+      document.removeEventListener('mouseout', handleMouseOut);
+    };
+  }, []);
+
+  return (
+    <>
+      <div id="cursor-dot" ref={dotRef}></div>
+      <div id="cursor-outline" ref={outlineRef}></div>
+    </>
+  );
+};
+
+export default Cursor;

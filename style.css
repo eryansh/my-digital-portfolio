@@ -129,10 +129,10 @@ h1, h2, h3 {
     background: rgba(5, 8, 16, 0.85); 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 20px 40px; /* Lebarkan sedikit padding kiri dan kanan */
+    padding: 20px 40px; 
     display: flex;
-    justify-content: space-between; /* Tolak logo ke kiri, menu ke kanan */
-    align-items: center; /* Pastikan semua sebaris di tengah-tengah */
+    justify-content: space-between; 
+    align-items: center; 
     z-index: 1000;
     border-bottom: 1px solid rgba(0, 229, 255, 0.2);
 }
@@ -161,39 +161,72 @@ h1, h2, h3 {
     align-items: center;
 }
 
+/* Gaya untuk Menu Navigasi (Diselaraskan dengan Logo) */
 .nav-link {
     color: var(--text-main);
     text-decoration: none;
     font-family: 'Fira Code', monospace;
-    font-size: 0.9rem;
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    letter-spacing: 2px; 
     text-transform: uppercase;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .nav-link:hover {
     color: var(--accent-cyan);
-    text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+    text-shadow: 0 0 15px var(--accent-cyan);
 }
 
-/* Gaya Butang Randomize Theme */
-.theme-btn {
-    background: transparent;
-    border: 1px solid var(--accent-pink);
+/* Kilauan Khas (Active) untuk ScrollSpy */
+.nav-link.active {
     color: var(--accent-pink);
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-family: 'Fira Code', monospace;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    /* Kita padam pointer tersuai khusus untuk butang supaya boleh klik */
-    cursor: pointer !important; 
+    text-shadow: 0 0 20px var(--accent-pink);
+    border-bottom: 2px solid var(--accent-pink);
+    padding-bottom: 5px;
 }
 
-.theme-btn:hover {
-    background: var(--accent-pink);
-    color: #ffffff;
-    box-shadow: 0 0 15px var(--accent-pink);
+/* Butang Hamburger untuk skrin kecil */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer !important;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--accent-cyan);
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Gaya Butang Randomize Theme (Ikon SVG) */
+.theme-icon-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    cursor: pointer !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.theme-icon-btn svg {
+    transition: filter 0.3s ease;
+}
+
+.theme-icon-btn:hover {
+    color: var(--accent-pink);
+}
+
+.theme-icon-btn:hover svg {
+    filter: drop-shadow(0 0 10px var(--accent-pink));
 }
 
 /* =========================================
@@ -478,11 +511,66 @@ h1, h2, h3 {
 /* =========================================
    9. Responsive Media Queries
    ========================================= */
+
+/* Responsif untuk Skrin 900px ke bawah (Tablet & Smartphone) */
+@media (max-width: 900px) {
+    #navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-left .nav-logo {
+        font-size: 1rem; 
+    }
+
+    /* Tunjukkan butang hamburger */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Sembunyikan pautan dan ubah jadi reka bentuk Dropdown */
+    .nav-right {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(5, 8, 16, 0.95);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        flex-direction: column;
+        padding: 0;
+        border-bottom: 1px solid var(--accent-cyan);
+        
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* Muncul apabila butang ditekan (class 'active') */
+    .nav-right.active {
+        max-height: 500px;
+        padding: 30px 0;
+        box-shadow: 0 15px 25px rgba(0,0,0,0.8);
+    }
+
+    /* Animasi 3 Garis Hamburger bertukar jadi 'X' */
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+        background-color: var(--accent-pink);
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+        background-color: var(--accent-pink);
+    }
+}
+
 /* Smartphones (Up to 600px) */
 @media (max-width: 600px) {
     body { padding: 15px 15px 60px 15px; }
-    #navbar { flex-wrap: wrap; gap: 12px; padding: 15px 10px; }
-    .nav-link { font-size: 0.75rem; }
     h1.uppercase-title { font-size: 1.3rem; margin-top: 30px; }
     .card-grid { grid-template-columns: 1fr; }
     .chart-bar-row { gap: 10px; }
@@ -506,7 +594,6 @@ h1, h2, h3 {
 @media (min-width: 2561px) {
     body { max-width: 2400px; font-size: 1.4rem; }
     .card-grid { grid-template-columns: repeat(auto-fit, minmax(600px, 1fr)); gap: 40px; }
-    .nav-link { font-size: 1.2rem; }
     h1.uppercase-title { font-size: 3rem; margin-top: 60px; }
     .chart-label { width: 150px; font-size: 1.2rem; }
     .chart-value { font-size: 1.2rem; }
@@ -526,36 +613,8 @@ h1, h2, h3 {
     z-index: 10000;
 }
 
-.chat-bubble {
-    background: rgba(15, 23, 42, 0.95);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--accent-cyan);
-    border-radius: 12px 12px 0 12px;
-    padding: 15px 20px;
-    color: var(--text-light);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    max-width: 250px;
-    margin-bottom: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.6), 0 0 15px rgba(0, 229, 255, 0.2);
-    position: relative;
-    animation: floatBubble 3s ease-in-out infinite;
-    transition: border-color 0.3s ease;
-}
-
-/* Membina segi tiga kecil (ekor speech bubble) */
-.chat-bubble::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    right: 25px;
-    border-width: 10px 10px 0 0;
-    border-style: solid;
-    border-color: rgba(15, 23, 42, 0.95) transparent transparent transparent;
-}
-
 #avatar-canvas {
-    width: 160px; /* Boleh laras saiz avatar mengikut kesesuaian */
+    width: 160px; 
     height: auto;
     cursor: pointer;
     filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.4));
@@ -567,13 +626,6 @@ h1, h2, h3 {
     filter: drop-shadow(0 0 25px rgba(0, 229, 255, 0.8));
 }
 
-@keyframes floatBubble {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
-    100% { transform: translateY(0px); }
-}
-
-/* Sembunyikan widget pada skrin telefon yang terlalu kecil supaya tak semak */
 @media (max-width: 600px) {
     #ai-chat-widget {
         bottom: 15px;
