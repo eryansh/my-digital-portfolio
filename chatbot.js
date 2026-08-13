@@ -26,6 +26,32 @@ export function initChatbot() {
     canvas.id = 'avatar-canvas';
     const ctx = canvas.getContext('2d', { willReadFrequently: true });
 
+    // ==========================================
+    // LOGIK RESPONSIVE (SAIZ MENGIKUT PERANTI)
+    // ==========================================
+    function updateAvatarSize() {
+        if (window.innerWidth <= 600) {
+            // Telefon Pintar (Smartphone)
+            canvas.style.width = '90px'; 
+        } else if (window.innerWidth <= 1024) {
+            // Tablet / iPad
+            canvas.style.width = '120px';
+        } else {
+            // Komputer Desktop / Laptop
+            canvas.style.width = '160px';
+        }
+    }
+
+    // Panggil fungsi untuk set saiz semasa mula-mula dimuatkan
+    updateAvatarSize();
+    // Auto-laras jika pengguna mengubah saiz tetingkap pelayar web
+    window.addEventListener('resize', updateAvatarSize);
+
+    // Tambah sedikit gaya asas (CSS) terus dari JS
+    canvas.style.cursor = 'pointer';
+    canvas.style.filter = 'drop-shadow(0 0 15px rgba(0, 229, 255, 0.4))';
+    canvas.style.transition = 'transform 0.3s ease, filter 0.3s ease, width 0.3s ease';
+
     video.addEventListener('loadeddata', () => {
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
@@ -86,4 +112,3 @@ export function initChatbot() {
         }, 2000);
     });
 }
-
