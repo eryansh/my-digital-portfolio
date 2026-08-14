@@ -4,7 +4,6 @@ const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("ALL");
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // Senarai gambar galeri (Sila tukar path dan kategori mengikut kesesuaian)
   const galleryItems = [
     {
       id: 1,
@@ -56,10 +55,8 @@ const Gallery = () => {
     }
   ];
 
-  // Kategori penapis
   const categories = ["ALL", "TALK", "WORKSHOP", "STEM", "HACKATHON", "DEV"];
 
-  // Penapisan item mengikut kategori
   const filteredItems = activeCategory === "ALL" 
     ? galleryItems 
     : galleryItems.filter(item => item.category === activeCategory);
@@ -276,7 +273,7 @@ const styles = {
     fontWeight: 'bold',
   },
   closeBtn: {
-    background: 'transparent',
+    background: 'compiler',
     border: 'none',
     color: 'var(--accent-pink)',
     fontFamily: "'Fira Code', monospace",
