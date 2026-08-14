@@ -32,7 +32,6 @@ const Awards = () => {
     <section id="award" style={styles.section}>
       <div style={styles.headerContainer}>
         <h2 style={styles.sectionTitle}>
-          {/* Ini adalah baris yang telah dibetulkan */}
           <span style={styles.slash}>{"//"}</span> ACHIEVEMENTS_LOG
         </h2>
         <p style={styles.sectionDesc}>
@@ -65,10 +64,10 @@ const Awards = () => {
 
 const styles = {
   section: {
-    padding: '60px 0',
+    padding: 'clamp(40px, 8vw, 60px) 0', // Padding section dilaraskan untuk mobile
     display: 'flex',
     flexDirection: 'column',
-    gap: '40px',
+    gap: 'clamp(25px, 5vw, 40px)', // Jarak dilaraskan
   },
   headerContainer: {
     borderBottom: '1px solid rgba(0, 229, 255, 0.2)',
@@ -76,7 +75,7 @@ const styles = {
     marginBottom: '10px',
   },
   sectionTitle: {
-    fontSize: '2rem',
+    fontSize: 'clamp(1.5rem, 5vw, 2rem)', // Tajuk seksyen mengecil di mobile
     color: 'var(--text-light)',
     fontFamily: "'Fira Code', monospace",
     margin: '0 0 10px 0',
@@ -88,20 +87,20 @@ const styles = {
   sectionDesc: {
     color: 'var(--text-main)',
     margin: 0,
-    fontSize: '1rem',
+    fontSize: 'clamp(0.85rem, 2.5vw, 1rem)', // Penerangan mengecil
   },
   gridContainer: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '25px',
+    gap: 'clamp(20px, 4vw, 25px)', // Jarak antara kad anugerah diselaraskan
   },
   awardCard: {
     background: 'rgba(5, 8, 16, 0.6)',
     border: '1px solid rgba(255, 170, 0, 0.3)', 
     borderRadius: '8px',
-    padding: '25px',
+    padding: 'clamp(15px, 4vw, 25px)', // Padding dalaman kad mengecil
     display: 'flex',
-    gap: '20px',
+    gap: 'clamp(12px, 3vw, 20px)', // Jarak ikon dan teks mengecil di skrin kecil
     alignItems: 'flex-start',
     backdropFilter: 'blur(10px)',
     WebkitBackdropFilter: 'blur(10px)',
@@ -112,15 +111,15 @@ const styles = {
     background: 'rgba(255, 170, 0, 0.1)',
     border: '1px solid rgba(255, 170, 0, 0.4)',
     borderRadius: '8px',
-    width: '60px',
-    height: '60px',
+    width: 'clamp(45px, 10vw, 60px)', // Ikon box mengecil sikit di mobile
+    height: 'clamp(45px, 10vw, 60px)',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     flexShrink: 0,
   },
   awardIcon: {
-    fontSize: '1.8rem',
+    fontSize: 'clamp(1.3rem, 4vw, 1.8rem)', // Saiz ikon (emoji) dilaraskan
   },
   contentContainer: {
     flexGrow: 1,
@@ -132,30 +131,30 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    flexWrap: 'wrap',
-    gap: '10px',
+    flexWrap: 'wrap', // Pastikan tahun jatuh ke bawah jika tajuk terlalu panjang
+    gap: '5px',
   },
   awardTitle: {
     color: '#ffaa00', 
-    fontSize: '1.3rem',
+    fontSize: 'clamp(1.1rem, 4vw, 1.3rem)', // Tajuk anugerah dilaraskan
     margin: 0,
     fontFamily: "'Fira Code', monospace",
   },
   awardYear: {
     color: 'var(--accent-cyan)',
     fontFamily: "'Fira Code', monospace",
-    fontSize: '0.9rem',
+    fontSize: 'clamp(0.75rem, 2vw, 0.9rem)', // Tahun mengecil
     fontWeight: 'bold',
   },
   awardIssuer: {
     color: 'var(--text-light)',
-    fontSize: '1rem',
+    fontSize: 'clamp(0.85rem, 3vw, 1rem)', // Pengeluar sijil dilaraskan
     margin: 0,
     fontWeight: '500',
   },
   awardDesc: {
     color: 'var(--text-main)',
-    fontSize: '0.95rem',
+    fontSize: 'clamp(0.85rem, 2.5vw, 0.95rem)', // Penerangan mengecil
     lineHeight: '1.6',
     margin: 0,
   }

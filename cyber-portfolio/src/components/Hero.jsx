@@ -141,7 +141,7 @@ const styles = {
     marginBottom: '10px',
   },
   mainTitle: {
-    fontSize: 'clamp(3rem, 8vw, 5.5rem)', 
+    fontSize: 'clamp(2rem, 7vw, 4.5rem)', 
     fontWeight: '900',
     margin: '0',
     lineHeight: '1.1',
@@ -150,12 +150,12 @@ const styles = {
     textShadow: '0 0 20px rgba(0, 229, 255, 0.3)',
   },
   typewriterContainer: {
-    fontSize: 'clamp(1.2rem, 3vw, 2rem)',
+    fontSize: 'clamp(0.85rem, 2.5vw, 1.5rem)',
     fontFamily: "'Fira Code', monospace",
     marginTop: '10px',
     marginBottom: '20px',
     background: 'rgba(15, 23, 42, 0.5)',
-    padding: '10px 20px',
+    padding: '10px 15px', 
     borderRadius: '4px',
     borderLeft: '3px solid var(--accent-pink)',
     display: 'inline-block',
@@ -163,7 +163,7 @@ const styles = {
   },
   terminalPrompt: {
     color: 'var(--chart-bar-positive)',
-    marginRight: '10px',
+    marginRight: '8px',
   },
   typewriterText: {
     color: 'var(--text-light)',
@@ -173,8 +173,8 @@ const styles = {
     animation: 'blink 1s step-end infinite',
   },
   bioText: {
-    fontSize: '1.1rem',
-    lineHeight: '1.8',
+    fontSize: 'clamp(0.9rem, 2.5vw, 1.1rem)', 
+    lineHeight: '1.6',
     color: 'var(--text-main)',
     maxWidth: '650px',
     marginTop: '10px',
@@ -182,16 +182,17 @@ const styles = {
   },
   buttonGroup: {
     display: 'flex',
-    gap: '20px',
+    gap: '15px',
     flexWrap: 'wrap',
   },
   primaryBtn: {
-    padding: '12px 24px',
+    // Padding dan font-size mengecil secara automatik untuk skrin kecil
+    padding: 'clamp(10px, 2vw, 12px) clamp(16px, 4vw, 24px)',
+    fontSize: 'clamp(0.75rem, 2vw, 0.9rem)',
     background: 'rgba(0, 229, 255, 0.1)',
     color: 'var(--accent-cyan)',
     border: '1px solid var(--accent-cyan)',
     fontFamily: "'Fira Code', monospace",
-    fontSize: '0.9rem',
     fontWeight: 'bold',
     textDecoration: 'none',
     textTransform: 'uppercase',
@@ -200,12 +201,13 @@ const styles = {
     boxShadow: '0 0 15px rgba(0, 229, 255, 0.2)',
   },
   secondaryBtn: {
-    padding: '12px 24px',
+    // Padding dan font-size mengecil secara automatik untuk skrin kecil
+    padding: 'clamp(10px, 2vw, 12px) clamp(16px, 4vw, 24px)',
+    fontSize: 'clamp(0.75rem, 2vw, 0.9rem)',
     background: 'transparent',
     color: 'var(--accent-pink)',
     border: '1px solid var(--accent-pink)',
     fontFamily: "'Fira Code', monospace",
-    fontSize: '0.9rem',
     fontWeight: 'bold',
     textDecoration: 'none',
     textTransform: 'uppercase',

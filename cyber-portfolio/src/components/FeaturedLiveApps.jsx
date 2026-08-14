@@ -17,7 +17,6 @@ const FeaturedLiveApps = () => {
     <section id="featured" style={styles.section}>
       <div style={styles.headerContainer}>
         <h2 style={styles.sectionTitle}>
-          {/* This is the line that was fixed */}
           <span style={styles.slash}>{"//"}</span> FEATURED_LIVE_APP
         </h2>
         <p style={styles.sectionDesc}>
@@ -63,10 +62,10 @@ const FeaturedLiveApps = () => {
 
 const styles = {
   section: {
-    padding: '60px 0',
+    padding: 'clamp(40px, 8vw, 60px) 0', // Padding section mengecil di mobile
     display: 'flex',
     flexDirection: 'column',
-    gap: '40px',
+    gap: 'clamp(20px, 5vw, 40px)',
   },
   headerContainer: {
     borderBottom: '1px solid rgba(0, 229, 255, 0.2)',
@@ -74,7 +73,7 @@ const styles = {
     marginBottom: '10px',
   },
   sectionTitle: {
-    fontSize: '2rem',
+    fontSize: 'clamp(1.5rem, 5vw, 2rem)', // Tajuk seksyen mengecil
     color: 'var(--text-light)',
     fontFamily: "'Fira Code', monospace",
     margin: '0 0 10px 0',
@@ -86,7 +85,7 @@ const styles = {
   sectionDesc: {
     color: 'var(--text-main)',
     margin: 0,
-    fontSize: '1rem',
+    fontSize: 'clamp(0.85rem, 2.5vw, 1rem)', // Penerangan seksyen mengecil
   },
   gridContainer: {
     display: 'grid',
@@ -111,7 +110,7 @@ const styles = {
     alignItems: 'center',
     borderBottom: '1px solid rgba(0, 229, 255, 0.1)',
     fontFamily: "'Fira Code', monospace",
-    fontSize: '0.75rem',
+    fontSize: 'clamp(0.65rem, 2vw, 0.75rem)', // Teks status bar mengecil sikit
   },
   statusIndicator: {
     display: 'flex',
@@ -131,19 +130,19 @@ const styles = {
     color: 'var(--text-main)',
   },
   cardBody: {
-    padding: '20px',
+    padding: 'clamp(15px, 4vw, 20px)', // Ruang dalaman (padding) kad dilaraskan
     flexGrow: 1,
     display: 'flex',
     flexDirection: 'column',
   },
   appTitle: {
     color: 'var(--accent-cyan)',
-    fontSize: '1.6rem',
+    fontSize: 'clamp(1.2rem, 4vw, 1.6rem)', // Tajuk aplikasi mengecil di mobile
     margin: '0 0 10px 0',
   },
   appDesc: {
     color: 'var(--text-light)',
-    fontSize: '1rem',
+    fontSize: 'clamp(0.85rem, 2.5vw, 1rem)', // Penerangan aplikasi dilaraskan
     lineHeight: '1.6',
     margin: '0 0 20px 0',
     flexGrow: 1,
@@ -157,13 +156,13 @@ const styles = {
     background: 'rgba(0, 229, 255, 0.1)',
     color: 'var(--accent-cyan)',
     border: '1px solid rgba(0, 229, 255, 0.3)',
-    padding: '4px 10px',
+    padding: 'clamp(3px, 1vw, 4px) clamp(8px, 2vw, 10px)', // Padding tag mengecil
     borderRadius: '4px',
-    fontSize: '0.8rem',
+    fontSize: 'clamp(0.7rem, 2vw, 0.8rem)', // Teks tag mengecil
     fontFamily: "'Fira Code', monospace",
   },
   cardFooter: {
-    padding: '15px 20px',
+    padding: 'clamp(12px, 3vw, 15px) clamp(15px, 4vw, 20px)', // Padding footer disesuaikan
     borderTop: '1px solid rgba(0, 229, 255, 0.1)',
     background: 'rgba(5, 8, 16, 0.9)',
   },
@@ -172,7 +171,7 @@ const styles = {
     textDecoration: 'none',
     fontFamily: "'Fira Code', monospace",
     fontWeight: 'bold',
-    fontSize: '0.9rem',
+    fontSize: 'clamp(0.8rem, 2.5vw, 0.9rem)', // Tulisan butang launch mengecil sikit
     display: 'inline-block',
     transition: 'color 0.3s ease, text-shadow 0.3s ease',
   }

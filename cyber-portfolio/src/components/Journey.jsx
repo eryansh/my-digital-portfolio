@@ -37,7 +37,6 @@ const Journey = () => {
     <section id="journey" style={styles.section}>
       <div style={styles.headerContainer}>
         <h2 style={styles.sectionTitle}>
-          {/* Ini adalah baris yang telah dibetulkan */}
           <span style={styles.slash}>{"//"}</span> MY_JOURNEY
         </h2>
         <p style={styles.sectionDesc}>
@@ -84,17 +83,17 @@ const Journey = () => {
 // ==========================================
 const styles = {
   section: {
-    padding: '60px 0',
+    padding: 'clamp(40px, 8vw, 60px) 0', // Padding mengecil di mobile
     display: 'flex',
     flexDirection: 'column',
-    gap: '50px',
+    gap: 'clamp(30px, 6vw, 50px)', // Jarak antara header dan timeline dilaraskan
   },
   headerContainer: {
     borderBottom: '1px solid rgba(0, 229, 255, 0.2)',
     paddingBottom: '15px',
   },
   sectionTitle: {
-    fontSize: '2rem',
+    fontSize: 'clamp(1.5rem, 5vw, 2rem)', // Tajuk seksyen mengecil
     color: 'var(--text-light)',
     fontFamily: "'Fira Code', monospace",
     margin: '0 0 10px 0',
@@ -106,7 +105,7 @@ const styles = {
   sectionDesc: {
     color: 'var(--text-main)',
     margin: 0,
-    fontSize: '1rem',
+    fontSize: 'clamp(0.85rem, 2.5vw, 1rem)', // Penerangan mengecil
   },
   timelineContainer: {
     position: 'relative',
@@ -116,7 +115,7 @@ const styles = {
   },
   timelineLine: {
     position: 'absolute',
-    left: '20px', // Jarak dari kiri untuk mobile-first
+    left: 'clamp(15px, 4vw, 20px)', // Garis ditolak sikit ke kiri pada skrin kecil
     top: 0,
     height: '100%',
     width: '2px',
@@ -125,18 +124,18 @@ const styles = {
   },
   timelineItem: {
     position: 'relative',
-    marginBottom: '40px',
-    paddingLeft: '60px', // Beri ruang untuk garis dan dot
+    marginBottom: 'clamp(30px, 6vw, 40px)', // Jarak antara kad dikurangkan di mobile
+    paddingLeft: 'clamp(50px, 12vw, 60px)', // Ruang untuk garis dan dot dilaraskan
     display: 'flex',
     alignItems: 'flex-start',
     zIndex: 2,
   },
   timelineDot: {
     position: 'absolute',
-    left: '0px',
+    left: 'clamp(-3px, -1vw, 0px)', // Selaraskan kedudukan dot supaya tengah-tengah garis
     top: '5px',
-    width: '40px',
-    height: '40px',
+    width: 'clamp(35px, 8vw, 40px)', // Saiz dot mengecil sikit di mobile
+    height: 'clamp(35px, 8vw, 40px)',
     borderRadius: '50%',
     background: '#050810',
     border: '2px solid',
@@ -146,13 +145,13 @@ const styles = {
     zIndex: 3,
   },
   dotIcon: {
-    fontSize: '1.2rem',
+    fontSize: 'clamp(1rem, 3vw, 1.2rem)', // Ikon dalam dot mengecil sikit
   },
   timelineContent: {
     background: 'rgba(15, 23, 42, 0.6)',
     backdropFilter: 'blur(10px)',
     WebkitBackdropFilter: 'blur(10px)',
-    padding: '20px',
+    padding: 'clamp(15px, 4vw, 20px)', // Padding dalaman kad mengecil
     borderRadius: '8px',
     border: '1px solid rgba(255, 255, 255, 0.05)',
     borderLeftWidth: '4px', // Sempadan tebal di kiri (neon highlight)
@@ -162,7 +161,7 @@ const styles = {
   },
   itemYear: {
     fontFamily: "'Fira Code', monospace",
-    fontSize: '0.85rem',
+    fontSize: 'clamp(0.75rem, 2vw, 0.85rem)', // Tahun mengecil
     color: 'var(--accent-pink)',
     fontWeight: 'bold',
     display: 'block',
@@ -170,19 +169,19 @@ const styles = {
   },
   itemTitle: {
     color: 'var(--text-light)',
-    fontSize: '1.3rem',
+    fontSize: 'clamp(1.1rem, 4vw, 1.3rem)', // Tajuk pekerjaan/pendidikan mengecil
     margin: '0 0 5px 0',
   },
   itemInstitution: {
     color: 'var(--accent-cyan)',
-    fontSize: '1rem',
+    fontSize: 'clamp(0.85rem, 3vw, 1rem)', // Institusi mengecil
     fontWeight: 'normal',
     margin: '0 0 15px 0',
     fontFamily: "'Fira Code', monospace",
   },
   itemDesc: {
     color: 'var(--text-main)',
-    fontSize: '0.95rem',
+    fontSize: 'clamp(0.85rem, 2.5vw, 0.95rem)', // Penerangan tugas mengecil
     lineHeight: '1.7',
     margin: 0,
   },
