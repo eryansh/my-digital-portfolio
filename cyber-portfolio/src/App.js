@@ -5,44 +5,11 @@ import Chatbot from './components/Chatbot';
 import Hero from './components/Hero';
 import FeaturedLiveApps from './components/FeaturedLiveApps';
 import WorkGrid from './components/WorkGrid';
-
-
-
-const Journey = () => (
-  <section id="journey" style={styles.placeholderSection}>
-    <h2 style={{ color: 'var(--text-main)' }}>[ CAREER_&_EDUCATION_JOURNEY ]</h2>
-    <p>Interactive academic and career timeline node architecture.</p>
-  </section>
-);
-
-const Skills = () => (
-  <section id="skills" style={styles.placeholderSection}>
-    <h2 style={{ color: 'var(--accent-cyan)' }}>[ TECH_STACK_DATABASE ]</h2>
-    <p>Python, React.js, Machine Learning parameters, and SQL skill matrices.</p>
-  </section>
-);
-
-const Awards = () => (
-  <section id="award" style={styles.placeholderSection}>
-    <h2 style={{ color: 'var(--accent-pink)' }}>[ HONORS_&_AWARDS_CORE ]</h2>
-    <p>Scholarships, hackathon wins, and official recognitions database.</p>
-  </section>
-);
-
-const Leadership = () => (
-  <section id="leadership" style={styles.placeholderSection}>
-    <h2 style={{ color: 'var(--accent-cyan)' }}>[ LEADERSHIP_&_ORGANIZATIONS ]</h2>
-    <p>Command history, student body leadership, and event organization tracks.</p>
-  </section>
-);
-
-const Contact = () => (
-  <section id="contact" style={styles.placeholderSection}>
-    <h2 style={{ color: 'var(--accent-pink)' }}>[ TERMINAL_CONTACT_GATEWAY ]</h2>
-    <p>Secure communications link for recruiters & CV download route.</p>
-    <a href="#cv" className="btn" style={{ marginTop: '15px' }}>DOWNLOAD CV</a>
-  </section>
-);
+import Journey from './components/Journey';
+import Skills from './components/Skills';
+import Awards from './components/Awards';
+import Leadership from './components/Leadership';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -53,7 +20,7 @@ function App() {
       {/* Menu Navigasi Utama */}
       <Navbar />
 
-      {/* Kandungan Utama Portfolio (Telah Dikemaskini) */}
+      {/* Kandungan Utama Portfolio */}
       <main style={styles.mainContent}>
         <Hero />
         <FeaturedLiveApps />
@@ -83,25 +50,13 @@ const styles = {
     overflowX: 'hidden',
   },
   mainContent: {
-    padding: '40px 20px 80px 20px',
+    // Dinaikkan ke 90px supaya tak bertindih dengan Navbar (70px)
+    padding: '90px 20px 80px 20px', 
     display: 'flex',
     flexDirection: 'column',
     gap: '50px',
     maxWidth: '1200px',
     margin: '0 auto',
-  },
-  placeholderSection: {
-    minHeight: '350px',
-    background: 'rgba(15, 23, 42, 0.4)',
-    border: '1px dashed rgba(0, 229, 255, 0.2)',
-    borderRadius: '8px',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center',
-    padding: '30px',
-    boxShadow: 'inset 0 0 20px rgba(0, 0, 0, 0.5)',
   }
 };
 
