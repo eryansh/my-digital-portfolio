@@ -105,7 +105,7 @@ const Gallery = () => {
               <span style={styles.badge}>{item.category}</span>
             </div>
             <div style={styles.cardBody}>
-              <span style={styles.itemDate}>// {item.date}</span>
+              <span style={styles.itemDate}>{"//"} {item.date}</span>
               <h3 style={styles.itemTitle}>{item.title}</h3>
               <p style={styles.itemDesc}>{item.description}</p>
             </div>
@@ -117,7 +117,7 @@ const Gallery = () => {
         <div style={styles.modalOverlay} onClick={() => setSelectedImage(null)}>
           <div style={styles.modalContent} onClick={(e) => e.stopPropagation()}>
             <div style={styles.modalHeader}>
-              <span style={styles.modalTitle}>SYS.PREVIEW // {selectedImage.title}</span>
+              <span style={styles.modalTitle}>SYS.PREVIEW {"//"} {selectedImage.title}</span>
               <button onClick={() => setSelectedImage(null)} style={styles.closeBtn}>[ X ]</button>
             </div>
             <div style={styles.modalBody}>
@@ -273,7 +273,7 @@ const styles = {
     fontWeight: 'bold',
   },
   closeBtn: {
-    background: 'compiler',
+    background: 'transparent',
     border: 'none',
     color: 'var(--accent-pink)',
     fontFamily: "'Fira Code', monospace",
