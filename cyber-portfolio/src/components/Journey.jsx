@@ -1,34 +1,50 @@
 import React from 'react';
 
 const Journey = () => {
-  // Data perjalanan kau (Pendidikan & Pengalaman)
-  // Sila tukar ikut data sebenar kau nanti
   const timelineData = [
     {
       id: 1,
-      year: "2023 - Present",
-      type: "Education", // Atau "Work"
-      title: "Master of Data Science",
-      institution: "Universiti Malaysia Sabah (UMS)",
-      description: "Focusing on Advanced Machine Learning, Big Data Analytics, and Neural Network optimization.",
-      icon: "🎓"
+      year: "Mar 2026 - Present",
+      type: "Work",
+      title: "Full-Stack Developer Intern",
+      institution: "U-Science, Universiti Malaysia Sabah",
+      description: "Architected the USC-X centralized management platform using the MERN stack and developed Power BI dashboards to analyze STEM datasets.",
+      icon: "💻"
     },
     {
       id: 2,
-      year: "2022 - 2023",
+      year: "Apr 2026 - Present",
       type: "Work",
-      title: "Junior Data Analyst (Internship)",
-      institution: "Tech Corp Malaysia",
-      description: "Performed ETL processes, visualized complex datasets using PowerBI, and assisted in building predictive models.",
-      icon: "💼"
+      title: "STEM Educator (Freelance)",
+      institution: "Smart Native Maker",
+      description: "Instructed weekend STEM programs, mentoring young learners in Arduino, TinkerCAD, Scratch, and Machine Learning.",
+      icon: "🤖"
     },
     {
       id: 3,
-      year: "2018 - 2022",
-      type: "Education",
-      title: "Bachelor of Computer Science",
+      year: "Oct 2022 - Dec 2026",
+      type: "Education", 
+      title: "Bachelor of Computer Science (Data Science)",
       institution: "Universiti Malaysia Sabah (UMS)",
-      description: "Specialized in Software Engineering. Graduated with CGPA 3.80. Final Year Project on IoT.",
+      description: "Specializing in Data Science and Machine Learning. Engineered an H5 Deep Learning model for NLP and an AI-driven Telegram bot.",
+      icon: "🎓"
+    },
+    {
+      id: 4,
+      year: "Mar 2021 - Jul 2021",
+      type: "Work",
+      title: "IT Tech Intern",
+      institution: "Prima IT",
+      description: "Diagnosed and resolved over 15+ hardware/software issues weekly, performed OS deployments, and provided technical consultations.",
+      icon: "🔧"
+    },
+    {
+      id: 5,
+      year: "Jun 2018 - Sep 2021",
+      type: "Education",
+      title: "Diploma in Electronic Engineering (Computer)",
+      institution: "Politeknik Kota Kinabalu",
+      description: "Engineered an automated IoT smart gardening system utilizing an ESP32 microcontroller and Blynk Platform for the final year project.",
       icon: "🎓"
     }
   ];
@@ -83,17 +99,17 @@ const Journey = () => {
 // ==========================================
 const styles = {
   section: {
-    padding: 'clamp(40px, 8vw, 60px) 0', // Padding mengecil di mobile
+    padding: 'clamp(40px, 8vw, 60px) 0', 
     display: 'flex',
     flexDirection: 'column',
-    gap: 'clamp(30px, 6vw, 50px)', // Jarak antara header dan timeline dilaraskan
+    gap: 'clamp(30px, 6vw, 50px)', 
   },
   headerContainer: {
     borderBottom: '1px solid rgba(0, 229, 255, 0.2)',
     paddingBottom: '15px',
   },
   sectionTitle: {
-    fontSize: 'clamp(1.5rem, 5vw, 2rem)', // Tajuk seksyen mengecil
+    fontSize: 'clamp(1.5rem, 5vw, 2rem)', 
     color: 'var(--text-light)',
     fontFamily: "'Fira Code', monospace",
     margin: '0 0 10px 0',
@@ -105,7 +121,7 @@ const styles = {
   sectionDesc: {
     color: 'var(--text-main)',
     margin: 0,
-    fontSize: 'clamp(0.85rem, 2.5vw, 1rem)', // Penerangan mengecil
+    fontSize: 'clamp(0.85rem, 2.5vw, 1rem)', 
   },
   timelineContainer: {
     position: 'relative',
@@ -115,7 +131,7 @@ const styles = {
   },
   timelineLine: {
     position: 'absolute',
-    left: 'clamp(15px, 4vw, 20px)', // Garis ditolak sikit ke kiri pada skrin kecil
+    left: 'clamp(15px, 4vw, 20px)', 
     top: 0,
     height: '100%',
     width: '2px',
@@ -124,17 +140,17 @@ const styles = {
   },
   timelineItem: {
     position: 'relative',
-    marginBottom: 'clamp(30px, 6vw, 40px)', // Jarak antara kad dikurangkan di mobile
-    paddingLeft: 'clamp(50px, 12vw, 60px)', // Ruang untuk garis dan dot dilaraskan
+    marginBottom: 'clamp(30px, 6vw, 40px)', 
+    paddingLeft: 'clamp(50px, 12vw, 60px)', 
     display: 'flex',
     alignItems: 'flex-start',
     zIndex: 2,
   },
   timelineDot: {
     position: 'absolute',
-    left: 'clamp(-3px, -1vw, 0px)', // Selaraskan kedudukan dot supaya tengah-tengah garis
+    left: 'clamp(-3px, -1vw, 0px)', 
     top: '5px',
-    width: 'clamp(35px, 8vw, 40px)', // Saiz dot mengecil sikit di mobile
+    width: 'clamp(35px, 8vw, 40px)', 
     height: 'clamp(35px, 8vw, 40px)',
     borderRadius: '50%',
     background: '#050810',
@@ -145,23 +161,23 @@ const styles = {
     zIndex: 3,
   },
   dotIcon: {
-    fontSize: 'clamp(1rem, 3vw, 1.2rem)', // Ikon dalam dot mengecil sikit
+    fontSize: 'clamp(1rem, 3vw, 1.2rem)', 
   },
   timelineContent: {
     background: 'rgba(15, 23, 42, 0.6)',
     backdropFilter: 'blur(10px)',
     WebkitBackdropFilter: 'blur(10px)',
-    padding: 'clamp(15px, 4vw, 20px)', // Padding dalaman kad mengecil
+    padding: 'clamp(15px, 4vw, 20px)', 
     borderRadius: '8px',
     border: '1px solid rgba(255, 255, 255, 0.05)',
-    borderLeftWidth: '4px', // Sempadan tebal di kiri (neon highlight)
+    borderLeftWidth: '4px', 
     width: '100%',
     boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)',
     transition: 'transform 0.3s ease',
   },
   itemYear: {
     fontFamily: "'Fira Code', monospace",
-    fontSize: 'clamp(0.75rem, 2vw, 0.85rem)', // Tahun mengecil
+    fontSize: 'clamp(0.75rem, 2vw, 0.85rem)', 
     color: 'var(--accent-pink)',
     fontWeight: 'bold',
     display: 'block',
@@ -169,19 +185,19 @@ const styles = {
   },
   itemTitle: {
     color: 'var(--text-light)',
-    fontSize: 'clamp(1.1rem, 4vw, 1.3rem)', // Tajuk pekerjaan/pendidikan mengecil
+    fontSize: 'clamp(1.1rem, 4vw, 1.3rem)', 
     margin: '0 0 5px 0',
   },
   itemInstitution: {
     color: 'var(--accent-cyan)',
-    fontSize: 'clamp(0.85rem, 3vw, 1rem)', // Institusi mengecil
+    fontSize: 'clamp(0.85rem, 3vw, 1rem)', 
     fontWeight: 'normal',
     margin: '0 0 15px 0',
     fontFamily: "'Fira Code', monospace",
   },
   itemDesc: {
     color: 'var(--text-main)',
-    fontSize: 'clamp(0.85rem, 2.5vw, 0.95rem)', // Penerangan tugas mengecil
+    fontSize: 'clamp(0.85rem, 2.5vw, 0.95rem)', 
     lineHeight: '1.7',
     margin: 0,
   },

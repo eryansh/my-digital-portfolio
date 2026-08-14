@@ -10,6 +10,7 @@ import Skills from './components/Skills';
 import Awards from './components/Awards';
 import Leadership from './components/Leadership';
 import Contact from './components/Contact';
+import Gallery from './components/Gallery';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <FeaturedLiveApps />
         <WorkGrid />
         <Journey />
+        <Gallery />
         <Skills />
         <Awards />
         <Leadership />

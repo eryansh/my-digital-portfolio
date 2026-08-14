@@ -4,24 +4,24 @@ const Leadership = () => {
   const leadershipData = [
     {
       id: 1,
-      role: "President",
-      organization: "Computer Science Society (UMS)",
-      year: "2021 - 2022",
-      description: "Led a committee of 30+ students. Organized tech-talks, coding workshops, and the annual university hackathon which saw over 200 participants."
+      role: "Lead Organizer",
+      organization: "IT Exploration 2025",
+      year: "2025",
+      description: "Led a committee to execute technical workshops, including Arduino and mBot robotics training. Managed technical curricula and resource allocation for multiple concurrent sessions."
     },
     {
       id: 2,
-      role: "Project Manager",
-      organization: "Final Year Project (IoT & AI)",
-      year: "2021",
-      description: "Directed a team of 4 developers. Managed sprints, delegated tasks using Agile methodologies, and ensured the project was delivered ahead of the deadline."
+      role: "Deputy Director",
+      organization: "Borneo Hackathon 2024",
+      year: "2024",
+      description: "Directed registration, event logistics, and secretariat operations. Authored comprehensive program books and oversaw the welfare and daily operations for all participants."
     },
     {
       id: 3,
-      role: "Lead Developer",
-      organization: "National Tech Hackathon",
-      year: "2020",
-      description: "Spearheaded the software architecture design and coordinated frontend-backend integration, leading the team to a top 5 finish nationwide."
+      role: "Academic and Career Exco",
+      organization: "Persatuan Mahasiswa FKI",
+      year: "2023 - 2024",
+      description: "Organized and facilitated technical workshops, academic seminars, and career-focused events to bridge the gap between computing students and the tech industry."
     }
   ];
 
@@ -58,10 +58,10 @@ const Leadership = () => {
 
 const styles = {
   section: {
-    padding: 'clamp(40px, 8vw, 60px) 0', // Padding mengecil di mobile
+    padding: 'clamp(40px, 8vw, 60px) 0', 
     display: 'flex',
     flexDirection: 'column',
-    gap: 'clamp(25px, 5vw, 40px)', // Jarak dilaraskan
+    gap: 'clamp(25px, 5vw, 40px)', 
   },
   headerContainer: {
     borderBottom: '1px solid rgba(0, 229, 255, 0.2)',
@@ -69,7 +69,7 @@ const styles = {
     marginBottom: '10px',
   },
   sectionTitle: {
-    fontSize: 'clamp(1.5rem, 5vw, 2rem)', // Tajuk utama mengecil
+    fontSize: 'clamp(1.5rem, 5vw, 2rem)', 
     color: 'var(--text-light)',
     fontFamily: "'Fira Code', monospace",
     margin: '0 0 10px 0',
@@ -81,13 +81,12 @@ const styles = {
   sectionDesc: {
     color: 'var(--text-main)',
     margin: 0,
-    fontSize: 'clamp(0.85rem, 2.5vw, 1rem)', // Penerangan mengecil
+    fontSize: 'clamp(0.85rem, 2.5vw, 1rem)', 
   },
   gridContainer: {
     display: 'grid',
-    // Tukar dari 300px ke 250px supaya lebih mesra skrin kecil
     gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-    gap: 'clamp(20px, 4vw, 30px)', // Jarak antara kad dikurangkan sikit di mobile
+    gap: 'clamp(20px, 4vw, 30px)', 
   },
   card: {
     background: 'rgba(5, 8, 16, 0.6)',
@@ -103,7 +102,7 @@ const styles = {
   },
   cardTopBar: {
     background: 'rgba(255, 0, 127, 0.1)',
-    padding: 'clamp(6px, 2vw, 8px) clamp(10px, 3vw, 15px)', // Padding bar atas mengecil
+    padding: 'clamp(6px, 2vw, 8px) clamp(10px, 3vw, 15px)', 
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -111,37 +110,37 @@ const styles = {
   },
   sysText: {
     fontFamily: "'Fira Code', monospace",
-    fontSize: 'clamp(0.6rem, 2vw, 0.7rem)', // Teks sistem mengecil
+    fontSize: 'clamp(0.6rem, 2vw, 0.7rem)', 
     color: 'var(--accent-pink)',
     letterSpacing: '1px',
   },
   yearText: {
     fontFamily: "'Fira Code', monospace",
-    fontSize: 'clamp(0.7rem, 2.5vw, 0.8rem)', // Tahun mengecil
+    fontSize: 'clamp(0.7rem, 2.5vw, 0.8rem)', 
     color: 'var(--accent-cyan)',
     fontWeight: 'bold',
   },
   cardBody: {
-    padding: 'clamp(15px, 4vw, 20px)', // Ruang dalaman kad dilaraskan
+    padding: 'clamp(15px, 4vw, 20px)', 
     display: 'flex',
     flexDirection: 'column',
     gap: 'clamp(8px, 2vw, 10px)',
   },
   roleTitle: {
     color: 'var(--text-light)',
-    fontSize: 'clamp(1.1rem, 4vw, 1.4rem)', // Tajuk peranan mengecil
+    fontSize: 'clamp(1.1rem, 4vw, 1.4rem)', 
     margin: 0,
     textTransform: 'uppercase',
   },
   orgName: {
     color: 'var(--accent-cyan)',
-    fontSize: 'clamp(0.9rem, 3vw, 1rem)', // Nama organisasi mengecil
+    fontSize: 'clamp(0.9rem, 3vw, 1rem)', 
     margin: 0,
     fontWeight: '500',
   },
   roleDesc: {
     color: 'var(--text-main)',
-    fontSize: 'clamp(0.85rem, 2.5vw, 0.95rem)', // Penerangan tugas mengecil
+    fontSize: 'clamp(0.85rem, 2.5vw, 0.95rem)', 
     lineHeight: '1.6',
     margin: 0,
     marginTop: 'clamp(5px, 2vw, 10px)',

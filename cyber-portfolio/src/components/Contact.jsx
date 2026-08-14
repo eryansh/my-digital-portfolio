@@ -23,13 +23,13 @@ const Contact = () => {
             </p>
             
             <div style={styles.linksContainer}>
-              <a href="mailto:your.email@example.com" style={styles.primaryLinkBtn}>
+              <a href="mailto:heryanshah20@gmail.com" style={styles.primaryLinkBtn}>
                 [ SEND_EMAIL ]
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style={styles.secondaryLinkBtn}>
+              <a href="https://www.linkedin.com/in/heryanshah" target="_blank" rel="noopener noreferrer" style={styles.secondaryLinkBtn}>
                 [ LINKEDIN ]
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" style={styles.secondaryLinkBtn}>
+              <a href="https://github.com/eryansh" target="_blank" rel="noopener noreferrer" style={styles.secondaryLinkBtn}>
                 [ GITHUB ]
               </a>
             </div>
@@ -56,7 +56,7 @@ const Contact = () => {
       
       <div style={styles.footer}>
         <p style={styles.footerText}>
-          Designed & Built by Ryan Suhaimi © {new Date().getFullYear()}
+          Designed & Built by Heryanshah Suhaimi © {new Date().getFullYear()}
         </p>
         <p style={styles.footerSubText}>
           Powered by React, Vite & Cyberpunk Aesthetics
@@ -68,10 +68,10 @@ const Contact = () => {
 
 const styles = {
   section: {
-    padding: 'clamp(40px, 8vw, 60px) 0 20px 0', // Padding atas mengecil di mobile
+    padding: 'clamp(40px, 8vw, 60px) 0 20px 0', 
     display: 'flex',
     flexDirection: 'column',
-    gap: 'clamp(25px, 5vw, 40px)', // Jarak dilaraskan
+    gap: 'clamp(25px, 5vw, 40px)', 
   },
   headerContainer: {
     borderBottom: '1px solid rgba(0, 229, 255, 0.2)',
@@ -79,7 +79,7 @@ const styles = {
     marginBottom: '10px',
   },
   sectionTitle: {
-    fontSize: 'clamp(1.5rem, 5vw, 2rem)', // Tajuk utama mengecil
+    fontSize: 'clamp(1.5rem, 5vw, 2rem)', 
     color: 'var(--text-light)',
     fontFamily: "'Fira Code', monospace",
     margin: '0 0 10px 0',
@@ -91,11 +91,10 @@ const styles = {
   sectionDesc: {
     color: 'var(--text-main)',
     margin: 0,
-    fontSize: 'clamp(0.85rem, 2.5vw, 1rem)', // Penerangan mengecil
+    fontSize: 'clamp(0.85rem, 2.5vw, 1rem)', 
   },
   gridContainer: {
     display: 'grid',
-    // Tukar dari 300px ke 250px supaya sesuai untuk skrin yang lebih kecil
     gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
     gap: 'clamp(20px, 4vw, 30px)',
   },
@@ -121,7 +120,7 @@ const styles = {
   },
   cardHeader: {
     background: 'rgba(0, 229, 255, 0.1)',
-    padding: 'clamp(8px, 2vw, 12px) clamp(15px, 3vw, 20px)', // Padding bar mengecil sikit
+    padding: 'clamp(8px, 2vw, 12px) clamp(15px, 3vw, 20px)', 
     borderBottom: '1px solid rgba(0, 229, 255, 0.2)',
   },
   cardHeaderAlt: {
@@ -131,7 +130,7 @@ const styles = {
   },
   headerText: {
     fontFamily: "'Fira Code', monospace",
-    fontSize: 'clamp(0.7rem, 2vw, 0.85rem)', // Teks sistem header dilaraskan
+    fontSize: 'clamp(0.7rem, 2vw, 0.85rem)', 
     color: 'var(--accent-cyan)',
     letterSpacing: '1px',
     fontWeight: 'bold',
@@ -144,7 +143,7 @@ const styles = {
     fontWeight: 'bold',
   },
   cardBody: {
-    padding: 'clamp(15px, 4vw, 25px) clamp(15px, 4vw, 20px)', // Ruang dalaman dilaraskan
+    padding: 'clamp(15px, 4vw, 25px) clamp(15px, 4vw, 20px)', 
     display: 'flex',
     flexDirection: 'column',
     flexGrow: 1,
@@ -152,7 +151,7 @@ const styles = {
   },
   bodyText: {
     color: 'var(--text-light)',
-    fontSize: 'clamp(0.85rem, 2.5vw, 1rem)', // Teks badan mesej mengecil
+    fontSize: 'clamp(0.85rem, 2.5vw, 1rem)', 
     lineHeight: '1.7',
     margin: 0,
     flexGrow: 1,
@@ -160,15 +159,15 @@ const styles = {
   linksContainer: {
     display: 'flex',
     flexWrap: 'wrap',
-    gap: 'clamp(10px, 2vw, 15px)', // Jarak butang dilaraskan
+    gap: 'clamp(10px, 2vw, 15px)', 
   },
   primaryLinkBtn: {
-    padding: 'clamp(8px, 2vw, 10px) clamp(12px, 3vw, 18px)', // Padding butang mengecil
+    padding: 'clamp(8px, 2vw, 10px) clamp(12px, 3vw, 18px)', 
     background: 'rgba(0, 229, 255, 0.1)',
     color: 'var(--accent-cyan)',
     border: '1px solid var(--accent-cyan)',
     fontFamily: "'Fira Code', monospace",
-    fontSize: 'clamp(0.75rem, 2vw, 0.9rem)', // Teks butang mengecil
+    fontSize: 'clamp(0.75rem, 2vw, 0.9rem)', 
     fontWeight: 'bold',
     textDecoration: 'none',
     cursor: 'pointer',
@@ -201,7 +200,7 @@ const styles = {
     boxShadow: '0 0 10px rgba(255, 0, 127, 0.2)',
   },
   footer: {
-    marginTop: 'clamp(40px, 8vw, 60px)', // Jarak footer dilaraskan
+    marginTop: 'clamp(40px, 8vw, 60px)', 
     paddingTop: 'clamp(20px, 4vw, 30px)',
     borderTop: '1px dashed rgba(255, 255, 255, 0.1)',
     textAlign: 'center',
@@ -209,12 +208,12 @@ const styles = {
   footerText: {
     fontFamily: "'Fira Code', monospace",
     color: 'var(--accent-cyan)',
-    fontSize: 'clamp(0.75rem, 2vw, 0.9rem)', // Teks footer mengecil
+    fontSize: 'clamp(0.75rem, 2vw, 0.9rem)', 
     margin: '0 0 5px 0',
   },
   footerSubText: {
     color: 'var(--text-main)',
-    fontSize: 'clamp(0.65rem, 2vw, 0.8rem)', // Subteks footer mengecil
+    fontSize: 'clamp(0.65rem, 2vw, 0.8rem)', 
     margin: 0,
   }
 };

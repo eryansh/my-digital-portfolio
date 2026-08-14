@@ -1,0 +1,8 @@
+The dynamic public landing page (Home) serving as the main entry point for visitors.
+Interactive public gallery dynamically managed to showcase events and multimedia.
+User portal interface designed for seamless asset booking and reservations.
+Staff portal homepage featuring a customizable interface with 9 selectable visual themes.
+Media management system allowing staff to easily control and update the public landing page.
+Comprehensive feedback management module for collecting and analyzing program responses.
+Visual analytics dashboard generating real-time statistical reports and data insights.
+Centralized administrative module for managing U-Science core data and activity programs.
