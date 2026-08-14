@@ -61,7 +61,7 @@ const Hero = () => {
             HERYANSHAH <span style={{ color: 'var(--accent-cyan)' }}>SUHAIMI</span>
           </h1>
 
-          {/* ADDED CLASSNAME HERE FOR MOBILE TARGETING */}
+          {/* CLASSNAME DIGUNAKAN DI SINI UNTUK KAWALAN CSS MOBILE */}
           <div className="typewriter-box" style={styles.typewriterContainer}>
             <span style={styles.terminalPrompt}>root@ryan:~#</span>
             <span style={styles.typewriterText}> {text}</span>
@@ -108,7 +108,6 @@ const Hero = () => {
 
         <div style={styles.imageColumn}>
           <div style={styles.imagePlaceholder}>
-            {/* Gantikan src di bawah dengan fail gambar sebenar kau dalam folder public */}
             <img 
               src="/profile-square.png" 
               alt="Heryanshah Suhaimi" 
@@ -213,6 +212,8 @@ const styles = {
     borderLeft: '3px solid var(--accent-pink)',
     display: 'inline-block',
     alignSelf: 'flex-start',
+    lineHeight: '1.5', // <-- DITAMBAH: Memastikan tinggi teks sentiasa tetap
+    wordBreak: 'break-word',
   },
   terminalPrompt: {
     color: 'var(--chart-bar-positive)',
@@ -269,7 +270,6 @@ const styles = {
 
 const styleSheet = document.createElement("style");
 styleSheet.type = "text/css";
-// ADDED MEDIA QUERY HERE FOR MOBILE SMARTPHONE FIX
 styleSheet.innerText = `
   @keyframes blink {
     0%, 100% { opacity: 1; }
@@ -278,9 +278,13 @@ styleSheet.innerText = `
   a:hover {
     filter: brightness(1.3);
   }
+  
+  /* KAWALAN KHAS UNTUK SMARTPHONE */
   @media (max-width: 768px) {
     .typewriter-box {
-      min-height: calc(3em + 20px); 
+      min-height: 90px !important; /* Tinggi tetap untuk elak melompat */
+      width: 100% !important;      /* Elak kotak mengecil dan membesar secara melintang */
+      box-sizing: border-box !important;
     }
   }
 `;
