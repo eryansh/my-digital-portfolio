@@ -75,7 +75,6 @@ const Gallery = () => {
         </p>
       </div>
 
-      {/* Butang Filter Kategori */}
       <div style={styles.filterContainer}>
         {categories.map((cat, index) => (
           <button
@@ -94,7 +93,6 @@ const Gallery = () => {
         ))}
       </div>
 
-      {/* Grid Galeri */}
       <div style={styles.gridContainer}>
         {filteredItems.map((item) => (
           <div key={item.id} style={styles.card} onClick={() => setSelectedImage(item)}>
@@ -118,7 +116,6 @@ const Gallery = () => {
         ))}
       </div>
 
-      {/* Modal / Popup Lightbox */}
       {selectedImage && (
         <div style={styles.modalOverlay} onClick={() => setSelectedImage(null)}>
           <div style={styles.modalContent} onClick={(e) => e.stopPropagation()}>
