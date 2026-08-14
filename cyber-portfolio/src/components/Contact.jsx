@@ -5,7 +5,8 @@ const Contact = () => {
     <section id="contact" style={styles.section}>
       <div style={styles.headerContainer}>
         <h2 style={styles.sectionTitle}>
-          <span style={styles.slash}>//</span> COMM_LINK_ESTABLISHED
+          {/* Ini adalah baris yang telah dibetulkan */}
+          <span style={styles.slash}>{"//"}</span> COMM_LINK_ESTABLISHED
         </h2>
         <p style={styles.sectionDesc}>
           Initiate direct communication or download my professional dossier.

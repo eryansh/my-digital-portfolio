@@ -32,7 +32,8 @@ const Awards = () => {
     <section id="award" style={styles.section}>
       <div style={styles.headerContainer}>
         <h2 style={styles.sectionTitle}>
-          <span style={styles.slash}>//</span> ACHIEVEMENTS_LOG
+          {/* Ini adalah baris yang telah dibetulkan */}
+          <span style={styles.slash}>{"//"}</span> ACHIEVEMENTS_LOG
         </h2>
         <p style={styles.sectionDesc}>
           Official records of recognition, academic excellence, and competitive milestones.

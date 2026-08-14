@@ -52,7 +52,8 @@ const Skills = () => {
     <section id="skills" style={styles.section}>
       <div style={styles.headerContainer}>
         <h2 style={styles.sectionTitle}>
-          <span style={styles.slash}>//</span> SYSTEM_CAPABILITIES
+          {/* Ini adalah baris yang telah dibetulkan */}
+          <span style={styles.slash}>{"//"}</span> SYSTEM_CAPABILITIES
         </h2>
         <p style={styles.sectionDesc}>
           Core competencies and technical proficiency levels across multiple domains.

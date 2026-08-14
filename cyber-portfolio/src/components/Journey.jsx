@@ -37,7 +37,8 @@ const Journey = () => {
     <section id="journey" style={styles.section}>
       <div style={styles.headerContainer}>
         <h2 style={styles.sectionTitle}>
-          <span style={styles.slash}>//</span> MY_JOURNEY
+          {/* Ini adalah baris yang telah dibetulkan */}
+          <span style={styles.slash}>{"//"}</span> MY_JOURNEY
         </h2>
         <p style={styles.sectionDesc}>
           Chronological log of academic qualifications and professional deployements.

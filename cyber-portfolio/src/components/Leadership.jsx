@@ -29,7 +29,8 @@ const Leadership = () => {
     <section id="leadership" style={styles.section}>
       <div style={styles.headerContainer}>
         <h2 style={styles.sectionTitle}>
-          <span style={styles.slash}>//</span> COMMAND_&_LEADERSHIP
+          {/* Ini adalah baris yang telah dibetulkan */}
+          <span style={styles.slash}>{"//"}</span> COMMAND_&_LEADERSHIP
         </h2>
         <p style={styles.sectionDesc}>
           Authorized roles, team management, and organizational coordination protocols.
