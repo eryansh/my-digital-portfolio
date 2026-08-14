@@ -61,7 +61,8 @@ const Hero = () => {
             HERYANSHAH <span style={{ color: 'var(--accent-cyan)' }}>SUHAIMI</span>
           </h1>
 
-          <div style={styles.typewriterContainer}>
+          {/* ADDED CLASSNAME HERE FOR MOBILE TARGETING */}
+          <div className="typewriter-box" style={styles.typewriterContainer}>
             <span style={styles.terminalPrompt}>root@ryan:~#</span>
             <span style={styles.typewriterText}> {text}</span>
             <span style={styles.cursorBlink}>_</span>
@@ -163,14 +164,14 @@ const styles = {
     width: '100%',
     aspectRatio: '1 / 1', 
     background: 'rgba(0, 229, 255, 0.05)',
-    border: '2px solid #333333', /* <-- Diubah dari 'dashed var(--accent-cyan)' kepada 'solid #333333' (kelabu hitam) */
+    border: '2px solid #333333', 
     borderRadius: '12px', 
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',
     overflow: 'hidden',
-    boxShadow: '0 0 20px rgba(0, 229, 255, 0.15)', /* Pilihan: Anda boleh buang baris ini jika tidak mahu efek 'glow' cyan di sekeliling gambar */
+    boxShadow: '0 0 20px rgba(0, 229, 255, 0.15)',
   },
   profileImage: {
     width: '100%',
@@ -268,6 +269,7 @@ const styles = {
 
 const styleSheet = document.createElement("style");
 styleSheet.type = "text/css";
+// ADDED MEDIA QUERY HERE FOR MOBILE SMARTPHONE FIX
 styleSheet.innerText = `
   @keyframes blink {
     0%, 100% { opacity: 1; }
@@ -275,6 +277,11 @@ styleSheet.innerText = `
   }
   a:hover {
     filter: brightness(1.3);
+  }
+  @media (max-width: 768px) {
+    .typewriter-box {
+      min-height: calc(3em + 20px); 
+    }
   }
 `;
 document.head.appendChild(styleSheet);
